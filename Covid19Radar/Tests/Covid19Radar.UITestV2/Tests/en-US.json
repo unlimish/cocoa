@@ -1,0 +1,7 @@
+{ 
+  "privacypolicyhtml" : { "value" : "Contact Confirmation Application Privacy Policy"},
+  "termofusehtml" : { "value" : "Contact Confirmation Application Terms and Conditions of Use"},
+  "ExposureNotificationHandler1ErrorMessage" : { "value" : "The processing number is incorrect or has expired"},
+  "HelpPage4Title" : { "value" : "Reinitialize the app"},
+  "HomePageDescription2" : { "value" : "Check contact with positive testers"},
+}

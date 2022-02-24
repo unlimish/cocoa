@@ -28,7 +28,11 @@ namespace Covid19Radar.iOS.Services
         {
             _loggerService.StartMethod();
 
+#if ENABLE_TEST_CLOUD
+
+#else
             AskPermissionForUserNotification();
+#endif
 
             _loggerService.EndMethod();
         }

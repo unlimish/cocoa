@@ -19,6 +19,9 @@ using Covid19Radar.Common;
 using Covid19Radar.Services.Logs;
 using Prism.Ioc;
 using AndroidX.AppCompat.App;
+using Xamarin.Forms;
+using Covid19Radar.Services;
+using System.Globalization;
 
 namespace Covid19Radar.Droid
 {
@@ -196,6 +199,22 @@ namespace Covid19Radar.Droid
             {
                 await NavigateToDestinationFromIntent(intent);
             }
+        }
+
+        //ENABLE_TEST_CLOUD
+
+        [Java.Interop.Export("GetCurrentCulture")]
+        public String GetCurrentCulture()
+        {
+            Context appContext = Android.App.Application.Context;
+            CultureInfo culture = DependencyService.Get<ILocalizeService>().GetCurrentCultureInfo();
+            return culture.Name;
+        }
+
+        [Java.Interop.Export("FinishAndRemoveTask")]
+        public void finishAndRemoveTask()
+        {
+            FinishAndRemoveTask();
         }
 
     }

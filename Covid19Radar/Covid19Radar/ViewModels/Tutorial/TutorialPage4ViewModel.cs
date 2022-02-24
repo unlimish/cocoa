@@ -32,7 +32,9 @@ namespace Covid19Radar.ViewModels
 
             try
             {
-                var success = await exposureNotificationApiService.StartExposureNotificationAsync();
+                //#if ENABLE_TEST_CLOUD
+                //var success = await exposureNotificationApiService.StartExposureNotificationAsync();
+                var success = true;
                 if (success)
                 {
                     await NavigationService.NavigateAsync(nameof(TutorialPage6));
@@ -40,7 +42,8 @@ namespace Covid19Radar.ViewModels
             }
             catch (ENException exception)
             {
-                loggerService.Exception("ENException", exception);
+                //ENABLE_TEST_CLOUD
+                //loggerService.Exception("ENException", exception);
                 await NavigationService.NavigateAsync(nameof(TutorialPage6));
             }
             finally
@@ -59,7 +62,8 @@ namespace Covid19Radar.ViewModels
         {
             loggerService.StartMethod();
 
-            await exposureNotificationApiService.StartExposureNotificationAsync();
+            //ENABLE_TEST_CLOUD
+            //await exposureNotificationApiService.StartExposureNotificationAsync();
             await NavigationService.NavigateAsync(nameof(TutorialPage6));
 
             loggerService.EndMethod();

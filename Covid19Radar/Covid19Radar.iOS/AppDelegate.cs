@@ -78,6 +78,14 @@ namespace Covid19Radar.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary launchOptions)
         {
+
+            // Newer version of Visual Studio for Mac and Visual Studio provide the
+            // ENABLE_TEST_CLOUD compiler directive in the Debug configuration,
+            // but not the Release configuration.
+            #if ENABLE_TEST_CLOUD
+            Xamarin.Calabash.Start();      
+            #endif
+
             NSUrlCache.SharedCache.RemoveAllCachedResponses();
 
             UIView.AppearanceWhenContainedIn(new [] { typeof(UIAlertController) }).TintColor = new UIColor((nfloat)0x06 / 0xFF, (nfloat)0x6A / 0xFF, (nfloat)0xB9 / 0xFF, 1.0f);

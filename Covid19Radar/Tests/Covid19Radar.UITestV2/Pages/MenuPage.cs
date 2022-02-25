@@ -34,25 +34,31 @@ namespace CovidRadar.UITestV2
 
         public MenuPage()
         {
-            openHomePage = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(0); //ホーム
-            openSettingsPage = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(1); //設定
-            openInqueryPage = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(2); //お問い合わせ
-            openHelpMenuPage = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(3); //使い方
-            openTermsofservicePage = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(4); //利用規約
-            openTermsofservicePageFromHelpPage = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(8); //利用規約 (使い方ページから)
-            openPrivacyPolicyPage2 = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(5); //プライバシーポリシー
-            openWebAccessibilityPolicyPage = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(6); //ウェブアクセシビリティ方針
-            toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("AppCompatImageButton").Index(0); //戻るボタン
-
-
 
             if (OnAndroid)
             {
+                openHomePage = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(0); //ホーム
+                openSettingsPage = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(1); //設定
+                openInqueryPage = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(2); //お問い合わせ
+                openHelpMenuPage = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(3); //使い方
+                openTermsofservicePage = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(4); //利用規約
+                openTermsofservicePageFromHelpPage = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(8); //利用規約 (使い方ページから)
+                openPrivacyPolicyPage2 = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(5); //プライバシーポリシー
+                openWebAccessibilityPolicyPage = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(6); //ウェブアクセシビリティ方針
+                toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("AppCompatImageButton").Index(0); //戻るボタン
             }
 
             if (OniOS)
             {
-
+                openHomePage = x => x.Marked("MasterDetailPageTitle").Class("UITableViewCell").Index(0); //ホーム
+                openSettingsPage = x => x.Marked("MasterDetailPageTitle").Class("UITableViewCell").Index(1); //設定
+                openInqueryPage = x => x.Marked("MasterDetailPageTitle").Class("UITableViewCell").Index(2); //お問い合わせ
+                openHelpMenuPage = x => x.Marked("MasterDetailPageTitle").Class("UITableViewCell").Index(3); //使い方
+                openTermsofservicePage = x => x.Marked("MasterDetailPageTitle").Class("UITableViewCell").Index(4); //利用規約
+                openTermsofservicePageFromHelpPage = x => x.Marked("MasterDetailPageTitle").Class("UITableViewCell").Index(8); //利用規約 (使い方ページから)
+                openPrivacyPolicyPage2 = x => x.Marked("MasterDetailPageTitle").Class("UITableViewCell").Index(5); //プライバシーポリシー
+                openWebAccessibilityPolicyPage = x => x.Marked("MasterDetailPageTitle").Class("UITableViewCell").Index(6); //ウェブアクセシビリティ方針
+                toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("UIButton").Index(0); //戻るボタン
             }
         }
 

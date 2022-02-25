@@ -30,19 +30,24 @@ namespace CovidRadar.UITestV2
 
         public HelpMenuPage()
         {
-            openHelpPage1 = x => x.Marked("MasterDetailPageTitle").Class("LabelRenderer").Index(0); //どのようにして接触を記録していますか？
-            openHelpPage2 = x => x.Marked("MasterDetailPageTitle").Class("LabelRenderer").Index(1); //接触の有無はどのように知ることができますか？
-            openHelpPage3 = x => x.Marked("MasterDetailPageTitle").Class("LabelRenderer").Index(2); //新型コロナウイルスに感染していると判定されたら
-            openHelpPage4 = x => x.Marked("MasterDetailPageTitle").Class("LabelRenderer").Index(3); //接触の記録を停止/情報を削除するには
-            toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("AppCompatImageButton").Index(0); //戻るボタン
+            
 
             if (OnAndroid)
             {
+                openHelpPage1 = x => x.Marked("MasterDetailPageTitle").Class("LabelRenderer").Index(0); //どのようにして接触を記録していますか？
+                openHelpPage2 = x => x.Marked("MasterDetailPageTitle").Class("LabelRenderer").Index(1); //接触の有無はどのように知ることができますか？
+                openHelpPage3 = x => x.Marked("MasterDetailPageTitle").Class("LabelRenderer").Index(2); //新型コロナウイルスに感染していると判定されたら
+                openHelpPage4 = x => x.Marked("MasterDetailPageTitle").Class("LabelRenderer").Index(3); //接触の記録を停止/情報を削除するには
+                toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("AppCompatImageButton").Index(0); //戻るボタン
             }
 
             if (OniOS)
             {
-
+                openHelpPage1 = x => x.Marked("MasterDetailPageTitle").Class("UILabel").Index(0); //どのようにして接触を記録していますか？
+                openHelpPage2 = x => x.Marked("MasterDetailPageTitle").Class("UILabel").Index(1); //接触の有無はどのように知ることができますか？
+                openHelpPage3 = x => x.Marked("MasterDetailPageTitle").Class("UILabel").Index(2); //新型コロナウイルスに感染していると判定されたら
+                openHelpPage4 = x => x.Marked("MasterDetailPageTitle").Class("UILabel").Index(3); //接触の記録を停止/情報を削除するには
+                toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("UIButton").Index(0); //戻るボタン
             }
         }
 

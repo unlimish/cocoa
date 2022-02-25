@@ -24,17 +24,14 @@ namespace CovidRadar.UITestV2
         public PrivacyPolicyPageTitle()
         {
 
-            Tutorial_btn = x => x.Marked("PrivacyPolicyPageTitle").Class("ButtonRenderer").Index(0);
-
-
-
             if (OnAndroid)
             {
+                Tutorial_btn = x => x.Marked("PrivacyPolicyPageTitle").Class("ButtonRenderer").Index(0);
             }
 
             if (OniOS)
             {
-
+                Tutorial_btn = x => x.Marked("PrivacyPolicyPageTitle").Class("UIButton").Index(0);
             }
         }
 

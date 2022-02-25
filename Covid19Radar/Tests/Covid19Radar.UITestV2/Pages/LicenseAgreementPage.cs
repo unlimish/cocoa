@@ -27,18 +27,18 @@ namespace CovidRadar.UITestV2
 
         public LicenseAgreementPage()
         {
-            toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("AppCompatImageButton").Index(0); //戻るボタン
-            openMenuPage = x => x.Class("AppCompatImageButton").Marked("OK"); //ハンバーガーメニュー
-
-
+            
 
             if (OnAndroid)
             {
+                toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("AppCompatImageButton").Index(0); //戻るボタン
+                openMenuPage = x => x.Class("AppCompatImageButton").Marked("OK"); //ハンバーガーメニュー
             }
 
             if (OniOS)
             {
-
+                toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("UILabel").Index(0); //戻るボタン
+                openMenuPage = x => x.Class("UILabel").Marked("OK"); //ハンバーガーメニュー
             }
         }
 

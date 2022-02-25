@@ -33,15 +33,7 @@ namespace CovidRadar.UITestV2
 
         public NotifyOtherPage()
         {
-            openHowToReceiveProcessingNumberBtn_NotCheckRadioBtn = x => x.Marked("MasterDetailPageTitle").Class("LabelRenderer").Index(3);//処理番号の取得方法(ラジオボタン未選択時)
-            openHowToReceiveProcessingNumberBtn_CheckedRadioBtn = x => x.Marked("MasterDetailPageTitle").Class("LabelRenderer").Index(4);//処理番号の取得方法(ラジオボタン選択時)
-            SymptomRadioBtn = x => x.Marked("MasterDetailPageTitle").Class("RadioButtonRenderer").Index(0);//症状の有無(あり)ラジオボタン
-            ProcessingNumberForm = x => x.Marked("MasterDetailPageTitle").Class("MaterialFormsTextInputLayout").Index(0);//陽性番号入力フォーム
-            RegisterBtn = x => x.Marked("MasterDetailPageTitle").Class("ButtonRenderer").Index(0);//登録するボタン
-            RegisterConfirmBtn = x => x.Id("button1");//2種類のボタンに同じIDが振られていることに注意。陽性情報の登録をしますダイアログ→(「登録」ボタン)　　COVID-19接触のログ記録を有効にしてください→(「OK」ボタン)
-            RegisterCancelBtn = x => x.Id("button2");//陽性情報の登録をしますダイアログ→(「キャンセル」ボタン)
-            CancelDialogOKBtn = x => x.Id("button1");//「登録をキャンセルしました」ダイアログでのOKボタン
-            toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("AppCompatImageButton").Index(0); //戻るボタン
+            
 
 
             //CancelDialogOKBtn = x => x.Id("message");//「登録をキャンセルしました」ダイアログでのOKボタン
@@ -49,11 +41,28 @@ namespace CovidRadar.UITestV2
 
             if (OnAndroid)
             {
+                openHowToReceiveProcessingNumberBtn_NotCheckRadioBtn = x => x.Marked("MasterDetailPageTitle").Class("LabelRenderer").Index(3);//処理番号の取得方法(ラジオボタン未選択時)
+                openHowToReceiveProcessingNumberBtn_CheckedRadioBtn = x => x.Marked("MasterDetailPageTitle").Class("LabelRenderer").Index(4);//処理番号の取得方法(ラジオボタン選択時)
+                SymptomRadioBtn = x => x.Marked("MasterDetailPageTitle").Class("RadioButtonRenderer").Index(0);//症状の有無(あり)ラジオボタン
+                ProcessingNumberForm = x => x.Marked("MasterDetailPageTitle").Class("MaterialFormsTextInputLayout").Index(0);//陽性番号入力フォーム
+                RegisterBtn = x => x.Marked("MasterDetailPageTitle").Class("ButtonRenderer").Index(0);//登録するボタン
+                RegisterConfirmBtn = x => x.Id("button1");//2種類のボタンに同じIDが振られていることに注意。陽性情報の登録をしますダイアログ→(「登録」ボタン)　　COVID-19接触のログ記録を有効にしてください→(「OK」ボタン)
+                RegisterCancelBtn = x => x.Id("button2");//陽性情報の登録をしますダイアログ→(「キャンセル」ボタン)
+                CancelDialogOKBtn = x => x.Id("button1");//「登録をキャンセルしました」ダイアログでのOKボタン
+                toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("AppCompatImageButton").Index(0); //戻るボタン
             }
 
             if (OniOS)
             {
-
+                openHowToReceiveProcessingNumberBtn_NotCheckRadioBtn = x => x.Marked("MasterDetailPageTitle").Class("UILabel").Index(3);//処理番号の取得方法(ラジオボタン未選択時)
+                openHowToReceiveProcessingNumberBtn_CheckedRadioBtn = x => x.Marked("MasterDetailPageTitle").Class("UILabel").Index(4);//処理番号の取得方法(ラジオボタン選択時)
+                SymptomRadioBtn = x => x.Marked("MasterDetailPageTitle").Class("UIView").Index(0);//症状の有無(あり)ラジオボタン
+                ProcessingNumberForm = x => x.Marked("MasterDetailPageTitle").Class("UIView").Index(0);//陽性番号入力フォーム
+                RegisterBtn = x => x.Marked("MasterDetailPageTitle").Class("UIButton").Index(0);//登録するボタン
+                RegisterConfirmBtn = x => x.Id("button1");//2種類のボタンに同じIDが振られていることに注意。陽性情報の登録をしますダイアログ→(「登録」ボタン)　　COVID-19接触のログ記録を有効にしてください→(「OK」ボタン)
+                RegisterCancelBtn = x => x.Id("button2");//陽性情報の登録をしますダイアログ→(「キャンセル」ボタン)
+                CancelDialogOKBtn = x => x.Id("button1");//「登録をキャンセルしました」ダイアログでのOKボタン
+                toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("UIButton").Index(0); //戻るボタン
             }
         }
 

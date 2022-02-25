@@ -27,17 +27,20 @@ namespace CovidRadar.UITestV2
         public SubmitConsentPage()
         {
 
-            //(陽性登録への同意画面)
-            openNotifyOtherPage = x => x.Marked("MasterDetailPageTitle").Class("ButtonRenderer").Index(0); //同意して登録する
-            toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("AppCompatImageButton").Index(0); //戻るボタン
+            
 
             if (OnAndroid)
             {
+                //(陽性登録への同意画面)
+                openNotifyOtherPage = x => x.Marked("MasterDetailPageTitle").Class("ButtonRenderer").Index(0); //同意して登録する
+                toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("AppCompatImageButton").Index(0); //戻るボタン
             }
 
             if (OniOS)
             {
-
+                //(陽性登録への同意画面)
+                openNotifyOtherPage = x => x.Marked("MasterDetailPageTitle").Class("UIButton").Index(0); //同意して登録する
+                toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("UIButton").Index(0); //戻るボタン
             }
         }
 

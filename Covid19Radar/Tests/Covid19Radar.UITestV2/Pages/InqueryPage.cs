@@ -30,18 +30,22 @@ namespace CovidRadar.UITestV2
         public InqueryPage()
         {
 
-            opensendLogConfirmationPage = x => x.Marked("MasterDetailPageTitle").Class("ButtonRenderer").Index(2);//動作状況を送信ボタン
-            openMenuPage = x => x.Class("AppCompatImageButton").Marked("OK"); //ハンバーガーメニュー
-            openFAQBtn = x => x.Marked("InqueryPageTitle").Class("ButtonRenderer").Index(0); //よくある質問ボタン
-            appImfoLink = x => x.Marked("InqueryPageTitle").Class("LabelRenderer").Index(3); //接触確認アプリに関する情報リンク
+            
 
             if (OnAndroid) 
             {
+                opensendLogConfirmationPage = x => x.Marked("MasterDetailPageTitle").Class("ButtonRenderer").Index(2);//動作状況を送信ボタン
+                openMenuPage = x => x.Class("AppCompatImageButton").Marked("OK"); //ハンバーガーメニュー
+                openFAQBtn = x => x.Marked("InqueryPageTitle").Class("ButtonRenderer").Index(0); //よくある質問ボタン
+                appImfoLink = x => x.Marked("InqueryPageTitle").Class("LabelRenderer").Index(3); //接触確認アプリに関する情報リンク
             }
 
             if (OniOS)
             {
-
+                opensendLogConfirmationPage = x => x.Marked("MasterDetailPageTitle").Class("UIButton").Index(2);//動作状況を送信ボタン
+                openMenuPage = x => x.Class("UIButton").Marked("OK"); //ハンバーガーメニュー
+                openFAQBtn = x => x.Marked("InqueryPageTitle").Class("UIButton").Index(0); //よくある質問ボタン
+                appImfoLink = x => x.Marked("InqueryPageTitle").Class("UILabel").Index(3); //接触確認アプリに関する情報リンク
             }
         }
 

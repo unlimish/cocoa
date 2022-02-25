@@ -23,17 +23,18 @@ namespace CovidRadar.UITestV2
 
         public HowToReceiveProcessingNumberPage()
         {
-            ToolBarBtn = x => x.Marked("MasterDetailPageTitle").Class("AppCompatImageButton").Index(0); //戻るボタン
+            
 
 
 
             if (OnAndroid)
             {
+                ToolBarBtn = x => x.Marked("MasterDetailPageTitle").Class("AppCompatImageButton").Index(0); //戻るボタン
             }
 
             if (OniOS)
             {
-
+                ToolBarBtn = x => x.Marked("MasterDetailPageTitle").Class("UIButton").Index(0); //戻るボタン
             }
         }
 

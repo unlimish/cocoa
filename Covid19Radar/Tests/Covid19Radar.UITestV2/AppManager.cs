@@ -22,7 +22,7 @@ namespace CovidRadar.UITestV2
             path = path.Substring(6);
 
             path = path.Replace("Covid19Radar\\Tests\\Covid19Radar.UITestV2\\bin\\Release", "precompiledApps");
-            path = path + "/jp.go.mhlw.covid19radar_adhoc_dv_v2.0.0.apk";
+            path = path + "/APP_PACKAGE_NAME.APP_PACKAGE_NAME.apk";
 
             return path;
         }
@@ -101,11 +101,11 @@ namespace CovidRadar.UITestV2
 
         public static JToken Comparison(string lang , string value)
         {
-            string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
-            path = path.Substring(6);
+            //string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+            //path = path.Substring(6);
 
             //path = path.Replace("bin\\Release", "Tests");
-            string fileName = path + "/Tests/" + lang + ".json";
+            string fileName = "Tests/" + lang + ".json";
 
             string jsonStr = File.ReadAllText(fileName);
             JObject jsonObj = JObject.Parse(jsonStr);

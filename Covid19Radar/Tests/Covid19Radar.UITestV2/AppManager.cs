@@ -105,7 +105,7 @@ namespace CovidRadar.UITestV2
             //path = path.Substring(6);
 
             //path = path.Replace("bin\\Release", "Tests");
-            string fileName = "Tests/" + lang + ".json";
+            string fileName = lang + ".json";
 
             string jsonStr = File.ReadAllText(fileName);
             JObject jsonObj = JObject.Parse(jsonStr);

@@ -106,12 +106,18 @@ namespace CovidRadar.UITestV2
             //path = path.Substring(6);
 
             //path = path.Replace("bin\\Release", "Tests");
-            string fileName = "Covid19Radar.UITestV2/" + lang + ".json";
+            //string fileName = "Covid19Radar.UITestV2/" + lang + ".json";
+
+
+            StreamReader fileName = new StreamReader(lang + ".json");
             Console.WriteLine(fileName);
-            string jsonStr = File.ReadAllText(fileName);
-            Console.WriteLine(jsonStr);
-  
-            JObject jsonObj = JObject.Parse(jsonStr);
+            //StreamReader sr = new StreamReader(filePath, Encoding.GetEncoding(encodingName));
+            string allLine = fileName.ReadToEnd();
+
+            //var jsonStr = File.ReadAllText(fileName);
+            Console.WriteLine(allLine);
+
+            JObject jsonObj = JObject.Parse(allLine);
             Console.WriteLine(jsonObj);
 
             return jsonObj[value]["value"];

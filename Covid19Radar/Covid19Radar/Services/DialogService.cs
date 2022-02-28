@@ -36,11 +36,12 @@ namespace Covid19Radar.Services
                     AppResources.ButtonClose);
                 return false;
             }
-            return await ConfirmAsync(
-                AppResources.BluetoothOffWarningDialogMessage,
-                AppResources.CheckSettingsDialogTitle,
-                AppResources.ToSettingsButton,
-                AppResources.ButtonCancel);
+            return await DummyAsync();
+            //return await ConfirmAsync(
+            //    AppResources.BluetoothOffWarningDialogMessage,
+            //    AppResources.CheckSettingsDialogTitle,
+            //    AppResources.ToSettingsButton,
+            //    AppResources.ButtonCancel);
         }
 
         public async Task<bool> ShowLocationOffWarningAsync()

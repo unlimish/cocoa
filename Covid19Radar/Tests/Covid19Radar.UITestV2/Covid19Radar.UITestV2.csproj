@@ -81,7 +81,6 @@
     <Compile Include="Pages\TutorialPageFlow.cs" />
     <Compile Include="Pages\WebAccessibilityPolicyPage.cs" />
     <Compile Include="PlatformQuery.cs" />
-    <Compile Include="Tests\S04_Tests.cs" />
     <Compile Include="Tests\S21_Tests.cs" />
   </ItemGroup>
   <ItemGroup>

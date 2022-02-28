@@ -48,7 +48,7 @@ namespace CovidRadar.UITestV2
 
             if (OniOS)
             {
-                openMenuPage = x => x.Class("UIButton").Index(0); //ハンバーガーメニュー
+                openMenuPage = x => x.Marked("btn_MasterDetailPageTitle");//ハンバーガーメニュー
                 openHelpMenuPage = x => x.Marked("LabelMainTutorial"); //使い方
                 toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("UIButton").Index(0); //戻るボタン
                 openNotContactPage = x => x.Marked("HomePageTitle").Class("UIButton").Index(0); //陽性者との接触結果を確認

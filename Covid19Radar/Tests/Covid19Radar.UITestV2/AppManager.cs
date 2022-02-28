@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.IO;
+using System.Reflection;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Text;
@@ -22,7 +23,7 @@ namespace CovidRadar.UITestV2
             path = path.Substring(6);
 
             path = path.Replace("Covid19Radar\\Tests\\Covid19Radar.UITestV2\\bin\\Release", "precompiledApps");
-            path = path + "/APP_PACKAGE_NAME.APP_PACKAGE_NAME.apk";
+            path = path + "/jp.go.mhlw.covid19radar_adhoc_dv_v2.0.0_1645768940.apk";
 
             return path;
         }
@@ -105,13 +106,16 @@ namespace CovidRadar.UITestV2
             //path = path.Substring(6);
 
             //path = path.Replace("bin\\Release", "Tests");
-            string fileName = lang + ".json";
-
+            string fileName = "Covid19Radar/UITestV2/Tests/"+ lang + ".json";
+            Console.WriteLine(fileName);
             string jsonStr = File.ReadAllText(fileName);
+            Console.WriteLine(jsonStr);
+  
             JObject jsonObj = JObject.Parse(jsonStr);
+            Console.WriteLine(jsonObj);
 
             return jsonObj[value]["value"];
-  
+
         }
     }
 }

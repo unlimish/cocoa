@@ -102,24 +102,9 @@ namespace CovidRadar.UITestV2
 
         public static JToken Comparison(string lang , string value)
         {
-            //string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
-            //path = path.Substring(6);
-
-            //path = path.Replace("bin\\Release", "Tests");
-            //string fileName = "Covid19Radar.UITestV2/" + lang + ".json";
-
-
             StreamReader fileName = new StreamReader(lang + ".json");
-            Console.WriteLine(fileName);
-            //StreamReader sr = new StreamReader(filePath, Encoding.GetEncoding(encodingName));
             string allLine = fileName.ReadToEnd();
-
-            //var jsonStr = File.ReadAllText(fileName);
-            Console.WriteLine(allLine);
-
             JObject jsonObj = JObject.Parse(allLine);
-            Console.WriteLine(jsonObj);
-
             return jsonObj[value]["value"];
 
         }

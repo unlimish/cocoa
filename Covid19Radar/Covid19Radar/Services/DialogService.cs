@@ -19,11 +19,12 @@ namespace Covid19Radar.Services
         }
 
         public async Task<bool> ShowExposureNotificationOffWarningAsync() =>
-            await ConfirmAsync(
-                AppResources.ExposureNotificationOffWarningDialogMessage,
-                AppResources.CheckSettingsDialogTitle,
-                AppResources.ToSettingsButton,
-                AppResources.ButtonCancel);
+            await DummyAsync();
+        //await ConfirmAsync(
+        //    AppResources.ExposureNotificationOffWarningDialogMessage,
+        //    AppResources.CheckSettingsDialogTitle,
+        //    AppResources.ToSettingsButton,
+        //    AppResources.ButtonCancel);
 
         public async Task<bool> ShowBluetoothOffWarningAsync()
         {
@@ -70,5 +71,9 @@ namespace Covid19Radar.Services
 
         public async Task AlertAsync(string message, string title = null, string okText = null) =>
             await UserDialogs.Instance.AlertAsync(message, title, okText);
+
+        public async Task<bool> DummyAsync()
+        { return true; }
+
     }
 }

@@ -147,8 +147,8 @@ namespace Covid19Radar.ViewModels
 
             try
             {
-                //var isSuccess = await exposureNotificationApiService.StartExposureNotificationAsync();
-                var isSuccess = true;
+                var isSuccess = await exposureNotificationApiService.StartExposureNotificationAsync();
+                //var isSuccess = true;
                 //#if ENABLE_TEST_CLOUD
 
                 if (isSuccess)

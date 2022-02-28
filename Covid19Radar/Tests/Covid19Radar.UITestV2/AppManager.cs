@@ -106,7 +106,7 @@ namespace CovidRadar.UITestV2
             //path = path.Substring(6);
 
             //path = path.Replace("bin\\Release", "Tests");
-            string fileName = "Covid19Radar/UITestV2/Tests/"+ lang + ".json";
+            string fileName = "Covid19Radar.UITestV2/" + lang + ".json";
             Console.WriteLine(fileName);
             string jsonStr = File.ReadAllText(fileName);
             Console.WriteLine(jsonStr);

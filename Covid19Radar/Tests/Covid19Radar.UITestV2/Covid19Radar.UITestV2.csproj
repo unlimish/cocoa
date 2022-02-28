@@ -84,15 +84,15 @@
     <Compile Include="Tests\S21_Tests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="zh-Hans.json">
+    <None Include="zh-Hans.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="en-US.json">
+    </None>
+    <None Include="en-US.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ja-JP.json">
+    </None>
+    <None Include="ja-JP.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

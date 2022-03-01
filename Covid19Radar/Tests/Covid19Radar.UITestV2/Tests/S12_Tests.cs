@@ -81,7 +81,7 @@ namespace CovidRadar.UITestV2
             var culture = app.Invoke("GetCurrentCulture");
 
             //ライセンステキストの取得
-            var license_test = app.Query(x => x.Marked("MasterDetailPageTitle").Class("AppCompatTextView").Index(0))[0];
+            var license_test = app.Query(x => x.Id("toolbar").Class("AppCompatTextView").Index(0))[0];
 
             //言語から比較する単語をjsonから取得
             string ComparisonText = (string)AppManager.Comparison(culture.ToString(), "HelpPage4Title");

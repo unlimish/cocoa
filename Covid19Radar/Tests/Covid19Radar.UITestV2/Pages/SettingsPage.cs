@@ -33,18 +33,18 @@ namespace CovidRadar.UITestV2
 
             if (OnAndroid)
             {
-                openLicenseAgreementPage = x => x.Marked("MasterDetailPageTitle").Class("ButtonRenderer").Index(0); //ライセンスページ
-                toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("AppCompatImageButton").Index(0); //戻るボタン
-                openMenuPage = x => x.Class("AppCompatImageButton").Marked("OK"); //ハンバーガーメニュー
-                syokika = x => x.Marked("MasterDetailPageTitle").Class("ButtonRenderer").Index(1); //アプリ初期化
+                openLicenseAgreementPage = x => x.Marked("SettingsPageTitle").Class("ButtonRenderer").Index(0); //ライセンスページ
+                toolBarBack = x => x.Id("toolbar").Class("AppCompatImageButton").Index(0); //戻るボタン
+                openMenuPage = x => x.Class("AppCompatImageButton").Index(0); //ハンバーガーメニュー
+                syokika = x => x.Marked("SettingsPageTitle").Class("ButtonRenderer").Index(1); //アプリ初期化
             }
 
             if (OniOS)
             {
-                openLicenseAgreementPage = x => x.Marked("MasterDetailPageTitle").Class("UIButton").Index(0); //ライセンスページ
-                toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("UIButton").Index(0); //戻るボタン
+                openLicenseAgreementPage = x => x.Marked("SettingsPageTitle").Class("UIButton").Index(0); //ライセンスページ
+                toolBarBack = x => x.Id("toolbar").Class("UIButton").Index(0); //戻るボタン
                 openMenuPage = x => x.Class("UIButton").Marked("OK"); //ハンバーガーメニュー
-                syokika = x => x.Marked("MasterDetailPageTitle").Class("UIButton").Index(1); //アプリ初期化
+                syokika = x => x.Marked("SettingsPageTitle").Class("UIButton").Index(1); //アプリ初期化
             }
         }
 

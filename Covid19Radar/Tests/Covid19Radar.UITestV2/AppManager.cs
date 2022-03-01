@@ -23,7 +23,7 @@ namespace CovidRadar.UITestV2
             path = path.Substring(6);
 
             path = path.Replace("Covid19Radar\\Tests\\Covid19Radar.UITestV2\\bin\\Release", "precompiledApps");
-            path = path + "/jp.go.mhlw.covid19radar_adhoc_dv_v2.0.0_1645768940.apk";
+            path = path + "/APP_PACKAGE_NAME.APP_PACKAGE_NAME.apk";
 
             return path;
         }

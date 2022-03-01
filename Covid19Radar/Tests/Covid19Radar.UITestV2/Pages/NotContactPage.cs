@@ -29,12 +29,12 @@ namespace CovidRadar.UITestV2
 
             if (OnAndroid)
             {
-                openIntroducePopup = x => x.Marked("MasterDetailPageTitle").Class("ButtonRenderer").Index(0);//処理番号の取得方法
+                openIntroducePopup = x => x.Marked("NotContactPageTitle").Class("ButtonRenderer").Index(0);//処理番号の取得方法
             }
 
             if (OniOS)
             {
-                openIntroducePopup = x => x.Marked("MasterDetailPageTitle").Class("UIButton").Index(0);//処理番号の取得方法
+                openIntroducePopup = x => x.Marked("NotContactPageTitle").Class("UIButton").Index(0);//処理番号の取得方法
             }
         }
 

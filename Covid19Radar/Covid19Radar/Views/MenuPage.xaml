@@ -4,7 +4,6 @@
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
 <MasterDetailPage
-    AutomationId="MasterDetailPageTitle"
     x:Class="Covid19Radar.Views.MenuPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -20,6 +19,7 @@
 
     <MasterDetailPage.Master>
         <ContentPage
+            AutomationId="MasterDetailPageTitle"
             Title="{x:Static resources:AppResources.MenuPageTitle}"
             ios:Page.UseSafeArea="True">
 

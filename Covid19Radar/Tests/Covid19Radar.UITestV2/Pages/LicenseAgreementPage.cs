@@ -31,14 +31,14 @@ namespace CovidRadar.UITestV2
 
             if (OnAndroid)
             {
-                toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("AppCompatImageButton").Index(0); //戻るボタン
-                openMenuPage = x => x.Class("AppCompatImageButton").Marked("OK"); //ハンバーガーメニュー
+                toolBarBack = x => x.Id("toolbar").Class("AppCompatImageButton").Index(0); //戻るボタン
+                openMenuPage = x => x.Class("AppCompatImageButton").Index(0); //ハンバーガーメニュー
             }
 
             if (OniOS)
             {
-                toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("UILabel").Index(0); //戻るボタン
-                openMenuPage = x => x.Class("UILabel").Marked("OK"); //ハンバーガーメニュー
+                toolBarBack = x => x.Id("toolbar").Class("UILabel").Index(0); //戻るボタン
+                openMenuPage = x => x.Class("UIButton").Index(3);//ハンバーガーメニュー
             }
         }
 

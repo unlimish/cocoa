@@ -120,7 +120,7 @@ namespace CovidRadar.UITestV2
             helpPage1.AssertHelpPage1();
 
             //S24 「接触の記録方法」画面左上の「使い方」ボタンを押下
-            menuPage.ToolBarBack();
+            helpPage1.ToolBarBack();
             helpMenuPage.AssertHelpMenuPage();
 
             //S25 「使い方」画面で、「接触の有無はどのように知ることができますか？」ボタンを押下
@@ -128,7 +128,7 @@ namespace CovidRadar.UITestV2
             helpPage2.AssertHelpPage2();
 
             //S26 「接触の確認方法」画面左上の「使い方」ボタンを押下
-            menuPage.ToolBarBack();
+            helpPage2.ToolBarBack();
             helpMenuPage.AssertHelpMenuPage();
 
             //S27 「使い方」画面で、「新型コロナウイルスに感染していると判定されたら」ボタンを押下

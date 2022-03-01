@@ -51,10 +51,10 @@ namespace CovidRadar.UITestV2
                 openMenuPage = x => x.Class("UIButton").Index(3);//ハンバーガーメニュー
                 openHelpMenuPage = x => x.Marked("LabelMainTutorial"); //使い方
                 toolBarBack = x => x.Id("toolbar").Class("UIButton").Index(0); //戻るボタン
-                openNotContactPage = x => x.Marked("HomePageTitle").Class("UIButton").Index(0); //陽性者との接触結果を確認
-                openNotContactPage_ENoff = x => x.Marked("HomePageTitle").Class("UIButton").Index(1); //陽性者との接触結果を確認 (接触通知OFF)
-                openSubmitConsentPage = x => x.Marked("HomePageTitle").Class("UIButton").Index(1); //陽性情報の登録
-                openSubmitConsentPage_ENoff = x => x.Marked("HomePageTitle").Class("UIButton").Index(2); //陽性情報の登録(接触通知OFF)
+                openNotContactPage = x => x.Marked("HomePageTitle").Class("UIButton").Index(1); //陽性者との接触結果を確認
+                openNotContactPage_ENoff = x => x.Marked("HomePageTitle").Class("UIButton").Index(2); //陽性者との接触結果を確認 (接触通知OFF)
+                openSubmitConsentPage = x => x.Marked("HomePageTitle").Class("UIButton").Index(2); //陽性情報の登録
+                openSubmitConsentPage_ENoff = x => x.Marked("HomePageTitle").Class("UIButton").Index(3); //陽性情報の登録(接触通知OFF)
                 openQuestionMark = x => x.Marked("HomePageTitle").Class("UIButton").Index(0); //?マーク
             }
         }

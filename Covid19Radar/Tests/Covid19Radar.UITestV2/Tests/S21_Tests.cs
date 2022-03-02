@@ -43,7 +43,7 @@ namespace CovidRadar.UITestV2
 
             if (OniOS)
             {
-                var privacypolicytitle = app.Query(c => c.Class("WKWebView").Css("H1"))[0];
+                privacypolicytitle = app.Query(c => c.Class("WKWebView").Css("H1"))[0];
             }
 
             //端末言語取得

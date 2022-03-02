@@ -78,13 +78,13 @@ namespace CovidRadar.UITestV2
             helpPage4.AssertHelpPage4();
 
             //端末言語取得
-            var culture = app.Invoke("GetCurrentCulture");
+            var cultureText = AppManager.GetCurrentCultureBackDoor();
 
             //ライセンステキストの取得
             var license_test = app.Query(x => x.Id("toolbar").Class("AppCompatTextView").Index(0))[0];
 
             //言語から比較する単語をjsonから取得
-            string ComparisonText = (string)AppManager.Comparison(culture.ToString(), "HelpPage4Title");
+            string ComparisonText = (string)AppManager.Comparison(cultureText, "HelpPage4Title");
 
             //比較
             //期待値 :「Reinitialize the app」画面へ遷移すること

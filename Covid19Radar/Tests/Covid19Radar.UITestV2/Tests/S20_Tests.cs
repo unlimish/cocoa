@@ -42,13 +42,17 @@ namespace CovidRadar.UITestV2
             var culture = app.Invoke("GetCurrentCulture");
 
             //利用規約タイトル取得
-            var message = app.Query(c => c.Css("H1"))[0];
-
-            string cultureText = "en-US";
-            if (culture.ToString() == "ja-JP" || culture.ToString() == "zh-Hans")
+            if (OnAndroid)
             {
-                cultureText = culture.ToString();
+                var message = app.Query(c => c.Css("H1"))[0];
             }
+
+            if (OniOS)
+            {
+                var message = app.Query(c => c.Class("WKWebView").Css("H1"))[0];
+            }
+
+            var cultureText = AppManager.GetCurrentCultureBackDoor();
 
             string ComparisonText = (string)AppManager.Comparison(cultureText, "termofusehtml");
 

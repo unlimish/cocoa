@@ -38,9 +38,6 @@ namespace CovidRadar.UITestV2
             //HOMEPAGEのbuttonテキスト取得
             var homepagebuttontitle = app.Query(x => x.Marked("MasterDetailPageTitle").Class("buttonRenderer").Index(0))[0];
 
-            //端末言語取得
-            var culture = app.Invoke("GetCurrentCulture");
-
             //言語から比較する単語をjsonから取得
             string ComparisonText = (string)AppManager.Comparison("en-US", "HomePageDescription2");
 

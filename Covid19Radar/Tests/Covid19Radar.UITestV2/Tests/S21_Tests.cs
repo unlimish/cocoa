@@ -39,7 +39,15 @@ namespace CovidRadar.UITestV2
             privacyPolicyPage2.AssertPrivacyPolicyPage2();
 
             //タイトル取得
-            var privacypolicytitle = app.Query(x => x.Css("h1"))[0];
+            if (OnAndroid)
+            {
+                var privacypolicytitle = app.Query(x => x.Css("h1"))[0];
+            }
+
+            if (OniOS)
+            {
+                var privacypolicytitle = app.Query(c => c.Class("WKWebView").Css("H1"))[0];
+            }
 
             //端末言語取得
             var cultureText = AppManager.GetCurrentCultureBackDoor();

@@ -29,10 +29,7 @@ namespace CovidRadar.UITestV2
         }
 
         private static string ApkPath = GetPath();
-        public const string AppPath = "../../../Binaries/TaskyiOS.app";
-        const string IpaBundleId = "com.xamarin.samples.taskytouch";
-
-    
+        public const string AppPath = "../../../../Covid19Radar.iOS/bin/iPhoneSimulator/Release/Covid19Radar.iOS.app";
 
         static IApp app;
         public static IApp App
@@ -81,7 +78,6 @@ namespace CovidRadar.UITestV2
             }
         }
 
-
         public static void ReStartApp()
         {
 
@@ -96,10 +92,6 @@ namespace CovidRadar.UITestV2
             }
         }
 
-
-
-
-
         public static JToken Comparison(string lang , string value)
         {
             StreamReader fileName = new StreamReader(lang + ".json");
@@ -107,6 +99,30 @@ namespace CovidRadar.UITestV2
             JObject jsonObj = JObject.Parse(allLine);
             return jsonObj[value]["value"];
 
+        }
+
+        public static String GetCurrentCultureBackDoor()
+        {
+            //端末言語取得
+            string cultureText = "";
+            if (Platform == Platform.Android)
+            {
+                cultureText = app.Invoke("GetCurrentCulture").ToString();
+            }
+            if (Platform == Platform.iOS)
+            {
+                cultureText = app.Invoke("GetCurrentCulture:", "UITest").ToString();
+            }
+
+            if (cultureText == "en")
+            {
+                cultureText = "en-US";
+            }
+            else if (cultureText == "ja")
+            {
+                cultureText = "ja-JP";
+            }
+            return cultureText;
         }
     }
 }

@@ -82,9 +82,9 @@ namespace Covid19Radar.iOS
             // Newer version of Visual Studio for Mac and Visual Studio provide the
             // ENABLE_TEST_CLOUD compiler directive in the Debug configuration,
             // but not the Release configuration.
-            #if ENABLE_TEST_CLOUD
-            Xamarin.Calabash.Start();      
-            #endif
+#if ENABLE_TEST_CLOUD
+            Xamarin.Calabash.Start();
+#endif
 
             NSUrlCache.SharedCache.RemoveAllCachedResponses();
 
@@ -315,6 +315,16 @@ namespace Covid19Radar.iOS
             _loggerService.Value.Exception("ENExcepiton occurred", exception);
             return Task.CompletedTask;
         }
+
+#if ENABLE_TEST_CLOUD
+        [Export("GetCurrentCulture:")]
+        public NSString GetCurrentCulture(NSString value)
+        {
+            System.Globalization.CultureInfo culture = DependencyService.Get<ILocalizeService>().GetCurrentCultureInfo();
+
+            return new NSString(culture.ToString());
+        }
+#endif
     }
 }
 

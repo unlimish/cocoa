@@ -15,14 +15,11 @@ namespace CovidRadar.UITestV2
             : base(platform)
         {
         }
-
-        [OneTimeSetUp]
-        public override void OneTimeSetUp()
+        [SetUp]
+        public override void BeforeEachTest()
         {
             AppManager.StartApp();
-
         }
-
         /* ENをONにするモーダルをタップする動作を実装できないため、CASE1~5は手動実行
         [Test]
         public void Case01_Test()

@@ -62,7 +62,7 @@ namespace CovidRadar.UITestV2
                 RegisterConfirmBtn = x => x.Id("button1");//2種類のボタンに同じIDが振られていることに注意。陽性情報の登録をしますダイアログ→(「登録」ボタン)　　COVID-19接触のログ記録を有効にしてください→(「OK」ボタン)
                 RegisterCancelBtn = x => x.Id("button2");//陽性情報の登録をしますダイアログ→(「キャンセル」ボタン)
                 CancelDialogOKBtn = x => x.Id("button1");//「登録をキャンセルしました」ダイアログでのOKボタン
-                toolBarBack = x => x.Id("toolbar").Class("UIButton").Index(0); //戻るボタン
+                toolBarBack = x => x.Id("BackButton").Class("UIButton").Index(0); //戻るボタン
             }
         }
 
@@ -98,7 +98,17 @@ namespace CovidRadar.UITestV2
 
         public void EnterProcessingNumberForm(string processingNumber="00000000")
         {
-            app.ScrollDownTo(ProcessingNumberForm);
+            
+            if (OnAndroid)
+            {
+                app.ScrollDownTo(ProcessingNumberForm);
+            }
+
+            if (OniOS)
+            {
+                app.ScrollDownTo("NotifyOtherPageTitleEntry", "NotifyOtherPageTitleScrollView");
+            }
+
             app.Tap(ProcessingNumberForm);
             app.ClearText();
             app.EnterText(processingNumber);
@@ -107,7 +117,15 @@ namespace CovidRadar.UITestV2
 
         public void TapRegisterBtn()
         {
-            app.ScrollDownTo(RegisterBtn);
+            if (OnAndroid)
+            {
+                app.ScrollDownTo(RegisterBtn);
+            }
+
+            if (OniOS)
+            {
+                app.ScrollDownTo("SubmitConsentPageBtn", "NotifyOtherPageTitleScrollView");
+            }
             app.Tap(RegisterBtn);
         }
         public void TapRegisterConfirmBtn()

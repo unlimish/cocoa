@@ -40,7 +40,7 @@ namespace CovidRadar.UITestV2
             {
                 //(陽性登録への同意画面)
                 openNotifyOtherPage = x => x.Marked("SubmitConsentPageTitle").Class("UIButton").Index(0); //同意して登録する
-                toolBarBack = x => x.Id("toolbar").Class("UIButton").Index(0); //戻るボタン
+                toolBarBack = x => x.Id("BackButton").Class("UIButton").Index(0); //戻るボタン
             }
         }
 
@@ -59,7 +59,17 @@ namespace CovidRadar.UITestV2
 
         public NotifyOtherPage OpenNotifyOtherPage()
         {
-            app.ScrollDownTo(openNotifyOtherPage);
+            
+            if (OnAndroid)
+            {
+                app.ScrollDownTo(openNotifyOtherPage);
+            }
+
+            if (OniOS)
+            {
+                app.ScrollDownTo("SubmitConsentPageScrollBtn", "SubmitConsentPageScrollView");
+            }
+
             app.Tap(openNotifyOtherPage);
             return new NotifyOtherPage();
         }

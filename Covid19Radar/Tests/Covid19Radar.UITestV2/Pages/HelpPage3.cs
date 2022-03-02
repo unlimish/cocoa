@@ -39,7 +39,7 @@ namespace CovidRadar.UITestV2
 
             if (OniOS)
             {
-                toolBarBack = x => x.Id("toolbar").Class("UIButton").Index(0); //戻るボタン
+                toolBarBack = x => x.Id("BackButton").Class("UIButton").Index(0); //戻るボタン
                 openSubmitConsentPage = x => x.Marked("HelpPage3Title").Class("UIButton").Index(0); //陽性情報を登録
             }
         }
@@ -57,7 +57,16 @@ namespace CovidRadar.UITestV2
 
         public SubmitConsentPage OpenSubmitConsentPage()
         {
-            app.ScrollDownTo(openSubmitConsentPage);
+            
+            if (OnAndroid)
+            {
+                app.ScrollDownTo(openSubmitConsentPage);
+            }
+
+            if (OniOS)
+            {
+                app.ScrollDownTo("HelpPage3Btn", "HelpPage3ScrollView");
+            }
             app.Tap(openSubmitConsentPage);
             return new SubmitConsentPage();
         }

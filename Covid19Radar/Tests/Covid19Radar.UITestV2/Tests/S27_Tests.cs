@@ -52,10 +52,10 @@ namespace CovidRadar.UITestV2
             var message = app.Query(x => x.Id("message"))[0];
 
             //端末言語取得
-            var culture = app.Invoke("GetCurrentCulture");
+            var cultureText = AppManager.GetCurrentCultureBackDoor();
 
             //言語から比較する単語をjsonから取得
-            string ComparisonText = (string)AppManager.Comparison(culture.ToString(), "ExposureNotificationHandler1ErrorMessage");
+            string ComparisonText = (string)AppManager.Comparison(cultureText, "ExposureNotificationHandler1ErrorMessage");
 
             //S8(文字比較) 「処理番号が誤っているか、有効期限が切れています」のポップアップが表示されること
             Assert.AreEqual(message.Text, ComparisonText);

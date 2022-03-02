@@ -44,11 +44,7 @@ namespace CovidRadar.UITestV2
             //利用規約タイトル取得
             var message = app.Query(c => c.Css("H1"))[0];
 
-            string cultureText = "en-US";
-            if (culture.ToString() == "ja-JP" || culture.ToString() == "zh-Hans")
-            {
-                cultureText = culture.ToString();
-            }
+            var cultureText = AppManager.GetCurrentCultureBackDoor();
 
             string ComparisonText = (string)AppManager.Comparison(cultureText, "termofusehtml");
 

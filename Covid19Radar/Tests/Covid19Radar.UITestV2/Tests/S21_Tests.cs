@@ -42,13 +42,7 @@ namespace CovidRadar.UITestV2
             var privacypolicytitle = app.Query(x => x.Css("h1"))[0];
 
             //端末言語取得
-            var culture = app.Invoke("GetCurrentCulture");
-
-            string cultureText = "en-US";
-            if (culture.ToString() == "ja-JP" || culture.ToString() == "zh-Hans")
-            {
-                cultureText = culture.ToString();
-            }
+            var cultureText = AppManager.GetCurrentCultureBackDoor();
 
             //言語から比較する単語をjsonから取得
             string ComparisonText = (string)AppManager.Comparison(cultureText, "privacypolicyhtml");

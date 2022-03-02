@@ -104,7 +104,7 @@ namespace CovidRadar.UITestV2
         public static String GetCurrentCultureBackDoor()
         {
             //端末言語取得
-            string cultureText = "";
+            string cultureText = "en-US";
             if (Platform == Platform.Android)
             {
                 cultureText = app.Invoke("GetCurrentCulture").ToString();

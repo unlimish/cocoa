@@ -20,16 +20,17 @@ namespace CovidRadar.UITestV2
         [SetUp]
         public virtual void BeforeEachTest()
         {
-            Console.WriteLine("SetUp");
+            AppManager.StartApp();
+            TutorialPageFlow TutorialPageFlow = new TutorialPageFlow();
+            TutorialPageFlow.Tutorial_Actual();
         }
 
 
         [OneTimeSetUp]
         public virtual void OneTimeSetUp()
         {
-            AppManager.StartApp();
-            TutorialPageFlow TutorialPageFlow = new TutorialPageFlow();
-            TutorialPageFlow.Tutorial_Actual();
+            
+            Console.WriteLine("OneTimeSetUp");
         }
 
         [TearDown]

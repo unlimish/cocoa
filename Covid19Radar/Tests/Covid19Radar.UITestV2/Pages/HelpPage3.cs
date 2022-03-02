@@ -39,7 +39,7 @@ namespace CovidRadar.UITestV2
 
             if (OniOS)
             {
-                toolBarBack = x => x.Id("toolbar").Class("UIButton").Index(0); //戻るボタン
+                toolBarBack = x => x.Id("BackButton").Class("UIButton").Index(0); //戻るボタン
                 openSubmitConsentPage = x => x.Marked("HelpPage3Title").Class("UIButton").Index(0); //陽性情報を登録
             }
         }

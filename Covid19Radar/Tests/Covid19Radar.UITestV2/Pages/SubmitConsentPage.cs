@@ -40,7 +40,7 @@ namespace CovidRadar.UITestV2
             {
                 //(陽性登録への同意画面)
                 openNotifyOtherPage = x => x.Marked("SubmitConsentPageTitle").Class("UIButton").Index(0); //同意して登録する
-                toolBarBack = x => x.Id("toolbar").Class("UIButton").Index(0); //戻るボタン
+                toolBarBack = x => x.Id("BackButton").Class("UIButton").Index(0); //戻るボタン
             }
         }
 

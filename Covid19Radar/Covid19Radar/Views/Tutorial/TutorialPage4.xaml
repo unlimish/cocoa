@@ -29,7 +29,10 @@
             Margin="0,0,0,20"
             Style="{StaticResource DefaultTitleLabel}"
             Text="{x:Static resources:AppResources.TutorialPage4Title2}" />
-        <ScrollView Grid.Row="1">
+        <ScrollView
+            Grid.Row="1"
+            AutomationId="TutorialPage4ScrollView"
+            >
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -69,6 +72,7 @@
                             Style="{StaticResource DefaultButton}"
                             Text="{x:Static resources:AppResources.TutorialPage4Button1}" />
                         <Button
+                            AutomationId="TutorialPage4Button_2"
                             AutomationProperties.IsInAccessibleTree="True"
                             TabIndex="5"
                             Margin="0,10,0,0"

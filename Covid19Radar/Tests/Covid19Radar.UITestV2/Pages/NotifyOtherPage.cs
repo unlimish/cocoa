@@ -98,7 +98,17 @@ namespace CovidRadar.UITestV2
 
         public void EnterProcessingNumberForm(string processingNumber="00000000")
         {
-            app.ScrollDownTo(ProcessingNumberForm);
+            
+            if (OnAndroid)
+            {
+                app.ScrollDownTo(ProcessingNumberForm);
+            }
+
+            if (OniOS)
+            {
+                app.ScrollDownTo("NotifyOtherPageTitleEntry", "NotifyOtherPageTitleScrollView");
+            }
+
             app.Tap(ProcessingNumberForm);
             app.ClearText();
             app.EnterText(processingNumber);
@@ -107,7 +117,15 @@ namespace CovidRadar.UITestV2
 
         public void TapRegisterBtn()
         {
-            app.ScrollDownTo(RegisterBtn);
+            if (OnAndroid)
+            {
+                app.ScrollDownTo(RegisterBtn);
+            }
+
+            if (OniOS)
+            {
+                app.ScrollDownTo("SubmitConsentPageBtn", "NotifyOtherPageTitleScrollView");
+            }
             app.Tap(RegisterBtn);
         }
         public void TapRegisterConfirmBtn()

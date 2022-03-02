@@ -59,7 +59,17 @@ namespace CovidRadar.UITestV2
 
         public NotifyOtherPage OpenNotifyOtherPage()
         {
-            app.ScrollDownTo(openNotifyOtherPage);
+            
+            if (OnAndroid)
+            {
+                app.ScrollDownTo(openNotifyOtherPage);
+            }
+
+            if (OniOS)
+            {
+                app.ScrollDownTo("SubmitConsentPageScrollBtn", "SubmitConsentPageScrollView");
+            }
+
             app.Tap(openNotifyOtherPage);
             return new NotifyOtherPage();
         }

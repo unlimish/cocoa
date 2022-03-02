@@ -22,7 +22,9 @@
         https://github.com/xamarin/Xamarin.Forms/issues/13597
     -->
     <ContentView>
-    <ScrollView>
+    <ScrollView
+        AutomationId="HelpPage3ScrollView"
+        >
         <Grid Style="{StaticResource HelpPageGridLayout}" Margin="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -150,6 +152,7 @@
             </StackLayout>
             <Grid Grid.Row="1">
                 <Button
+                    AutomationId="HelpPage3Btn"
                     AutomationProperties.IsInAccessibleTree="True"
                     TabIndex="6"
                     Command="{Binding Path=OnClickNotifyOtherPage}"

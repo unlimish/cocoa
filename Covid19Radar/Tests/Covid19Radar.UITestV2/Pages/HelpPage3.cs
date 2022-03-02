@@ -57,7 +57,16 @@ namespace CovidRadar.UITestV2
 
         public SubmitConsentPage OpenSubmitConsentPage()
         {
-            app.ScrollDownTo(openSubmitConsentPage);
+            
+            if (OnAndroid)
+            {
+                app.ScrollDownTo(openSubmitConsentPage);
+            }
+
+            if (OniOS)
+            {
+                app.ScrollDownTo("HelpPage3Btn", "HelpPage3ScrollView");
+            }
             app.Tap(openSubmitConsentPage);
             return new SubmitConsentPage();
         }

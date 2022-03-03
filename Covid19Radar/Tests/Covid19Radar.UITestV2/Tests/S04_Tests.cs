@@ -44,17 +44,20 @@ namespace CovidRadar.UITestV2
             //S4 処理番号の取得方法画面で「戻る」ボタンを押下
             howToReceiveProcessingNumberPage.ToolBarBack();
 
+            //端末言語取得
+            var cultureText = AppManager.GetCurrentCultureBackDoor();
+
 
             //処理誤り回数の前提を満たす作業実施
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
             notifyOtherPage.TapRegisterConfirmBtn();
-            notifyOtherPage.TapCancelDialogOKBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
 
             //S5 処理番号入力テキストボックスにパターンを参照して処理番号を入力
@@ -63,8 +66,6 @@ namespace CovidRadar.UITestV2
             //S6 「登録する」ボタンを押下
             notifyOtherPage.TapRegisterBtn();
 
-            //端末言語取得
-            var cultureText = AppManager.GetCurrentCultureBackDoor();
 
             //S7 「登録します」ポップアップの「登録」を押下
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);

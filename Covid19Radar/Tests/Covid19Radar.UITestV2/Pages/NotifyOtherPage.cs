@@ -143,9 +143,19 @@ namespace CovidRadar.UITestV2
             }
 
         }
-        public void TapRegisterCancelBtn()
+        public void TapRegisterCancelBtn(String cultureText = "")
         {
-            app.Tap(RegisterCancelBtn);
+ 
+            if (OnAndroid)
+            {
+                app.Tap(CancelDialogOKBtn);
+            }
+
+            if (OniOS)
+            {
+                string ComparisonText = (string)AppManager.Comparison(cultureText, "ButtonCancel");
+                app.Tap(ComparisonText);//陽性情報の登録をしますダイアログ→(「登録」ボタン)
+            }
         }
         public void TapCancelDialogOKBtn()
         {

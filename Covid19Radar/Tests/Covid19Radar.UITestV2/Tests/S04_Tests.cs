@@ -47,7 +47,6 @@ namespace CovidRadar.UITestV2
             //端末言語取得
             var cultureText = AppManager.GetCurrentCultureBackDoor();
 
-
             //処理誤り回数の前提を満たす作業実施
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
@@ -56,8 +55,8 @@ namespace CovidRadar.UITestV2
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
-            notifyOtherPage.TapRegisterConfirmBtn();
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
             //S5 処理番号入力テキストボックスにパターンを参照して処理番号を入力
@@ -66,22 +65,18 @@ namespace CovidRadar.UITestV2
             //S6 「登録する」ボタンを押下
             notifyOtherPage.TapRegisterBtn();
 
-
             //S7 「登録します」ポップアップの「登録」を押下
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
 
-
             //言語から比較する単語をjsonから取得
-            string ComparisonText = (string)AppManager.Comparison("ja-JP", "NotifyOtherPageDialogSubmittedTitle");
+            string ComparisonText = (string)AppManager.Comparison(cultureText, "NotifyOtherPageDialogSubmittedTitle");
 
             app.WaitForElement(x => x.Text(ComparisonText));
             var message = app.Query(x => x.Text(ComparisonText))[0];
 
             //S8(文字比較) 「登録が完了しました」ポップアップが表示されること
             Assert.AreEqual(message.Text, ComparisonText);
-
-
         }
 
 
@@ -111,16 +106,18 @@ namespace CovidRadar.UITestV2
             //S4 処理番号の取得方法画面で「戻る」ボタンを押下
             howToReceiveProcessingNumberPage.ToolBarBack();
 
+            //端末言語取得
+            var cultureText = AppManager.GetCurrentCultureBackDoor();
 
             //処理誤り回数の前提を満たす作業実施
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
@@ -131,14 +128,15 @@ namespace CovidRadar.UITestV2
             notifyOtherPage.TapRegisterBtn();
 
             //S7 「登録します」ポップアップの「登録」を押下
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
 
-            app.WaitForElement(x => x.Id("message"));
-            var message = app.Query(x => x.Id("message"))[0];
 
-            //比較する単語をjsonから取得
-            string ComparisonText = (string)AppManager.Comparison("ja-JP", "ExposureNotificationHandler1ErrorMessage");
+            //言語から比較する単語をjsonから取得
+            string ComparisonText = (string)AppManager.Comparison(cultureText, "ExposureNotificationHandler1ErrorMessage");
+
+            app.WaitForElement(x => x.Text(ComparisonText));
+            var message = app.Query(x => x.Text(ComparisonText))[0];
 
             //S8(文字比較) 「登録が完了しました」ポップアップが表示されること
             Assert.AreEqual(message.Text, ComparisonText);
@@ -172,22 +170,24 @@ namespace CovidRadar.UITestV2
             //S4 処理番号の取得方法画面で「戻る」ボタンを押下
             howToReceiveProcessingNumberPage.ToolBarBack();
 
+            //端末言語取得
+            var cultureText = AppManager.GetCurrentCultureBackDoor();
 
             //処理誤り回数の前提を満たす作業実施
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
@@ -198,13 +198,14 @@ namespace CovidRadar.UITestV2
             notifyOtherPage.TapRegisterBtn();
 
             //S7 「登録します」ポップアップの「登録」を押下
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
 
-            app.WaitForElement(x => x.Id("alertTitle"));
-            var message = app.Query(x => x.Id("alertTitle"))[0];
 
-            //比較する単語をjsonから取得
-            string ComparisonText = (string)AppManager.Comparison("ja-JP", "NotifyOtherPageDiagReturnHomeTitle");
+            //言語から比較する単語をjsonから取得
+            string ComparisonText = (string)AppManager.Comparison(cultureText, "NotifyOtherPageDiagReturnHomeTitle");
+
+            app.WaitForElement(x => x.Text(ComparisonText));
+            var message = app.Query(x => x.Text(ComparisonText))[0];
 
             //S8(文字比較) 「登録回数の上限に達しました」ポップアップが表示されること
             Assert.AreEqual(message.Text, ComparisonText);
@@ -241,22 +242,25 @@ namespace CovidRadar.UITestV2
             //S4 処理番号の取得方法画面で「戻る」ボタンを押下
             howToReceiveProcessingNumberPage.ToolBarBack();
 
+            //端末言語取得
+            var cultureText = AppManager.GetCurrentCultureBackDoor();
+
 
             //処理誤り回数の前提を満たす作業実施
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
@@ -267,15 +271,16 @@ namespace CovidRadar.UITestV2
             notifyOtherPage.TapRegisterBtn();
 
             //S7 「登録します」ポップアップの「登録」を押下
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
 
-            app.WaitForElement(x => x.Id("alertTitle"));
-            var message = app.Query(x => x.Id("alertTitle"))[0];
 
-            //比較する単語をjsonから取得
-            string ComparisonText = (string)AppManager.Comparison("ja-JP", "NotifyOtherPageDiagReturnHomeTitle");
+            //言語から比較する単語をjsonから取得
+            string ComparisonText = (string)AppManager.Comparison(cultureText, "NotifyOtherPageDiagReturnHomeTitle");
 
-            //S8(文字比較) 「登録が完了しました」ポップアップが表示されること
+            app.WaitForElement(x => x.Text(ComparisonText));
+            var message = app.Query(x => x.Text(ComparisonText))[0];
+
+            //S8(文字比較) 「登録回数の上限に達しました」ポップアップが表示されること
             Assert.AreEqual(message.Text, ComparisonText);
 
             //S9 「登録回数の上限に達しました」ポップアップの「OK」ボタンを押下
@@ -303,28 +308,30 @@ namespace CovidRadar.UITestV2
 
             notifyOtherPage.TapYesRadioBtn();
 
+            //端末言語取得
+            var cultureText = AppManager.GetCurrentCultureBackDoor();
+
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
-
 
 
             homePage.AssertHomePage();
@@ -355,15 +362,17 @@ namespace CovidRadar.UITestV2
             notifyOtherPage.TapRegisterBtn();
 
             //S7 「登録します」ポップアップの「登録」を押下
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
 
-            app.WaitForElement(x => x.Id("alertTitle"));
-            var message = app.Query(x => x.Id("alertTitle"))[0];
 
-            //比較する単語をjsonから取得
-            string ComparisonText = (string)AppManager.Comparison("ja-JP", "NotifyOtherPageDialogSubmittedTitle");
 
-            //S8(文字比較) 「登録が完了しました」ポップアップが表示されること
+            //言語から比較する単語をjsonから取得
+            string ComparisonText = (string)AppManager.Comparison(cultureText, "NotifyOtherPageDialogSubmittedTitle");
+
+            app.WaitForElement(x => x.Text(ComparisonText));
+            var message = app.Query(x => x.Text(ComparisonText))[0];
+
+            //S8(文字比較) 「登録回数の上限に達しました」ポップアップが表示されること
             Assert.AreEqual(message.Text, ComparisonText);
 
         }
@@ -387,26 +396,29 @@ namespace CovidRadar.UITestV2
 
             notifyOtherPage.TapYesRadioBtn();
 
+            //端末言語取得
+            var cultureText = AppManager.GetCurrentCultureBackDoor();
+
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
 
 
@@ -439,15 +451,16 @@ namespace CovidRadar.UITestV2
             notifyOtherPage.TapRegisterBtn();
 
             //S7 「登録します」ポップアップの「登録」を押下
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
 
-            app.WaitForElement(x => x.Id("message"));
-            var message = app.Query(x => x.Id("message"))[0];
 
-            //比較する単語をjsonから取得
-            string ComparisonText = (string)AppManager.Comparison("ja-JP", "ExposureNotificationHandler1ErrorMessage");
+            //言語から比較する単語をjsonから取得
+            string ComparisonText = (string)AppManager.Comparison(cultureText, "ExposureNotificationHandler1ErrorMessage");
 
-            //S8(文字比較) 「登録が完了しました」ポップアップが表示されること
+            app.WaitForElement(x => x.Text(ComparisonText));
+            var message = app.Query(x => x.Text(ComparisonText))[0];
+
+            //S8(文字比較) 「登録回数の上限に達しました」ポップアップが表示されること
             Assert.AreEqual(message.Text, ComparisonText);
 
         }
@@ -565,8 +578,11 @@ namespace CovidRadar.UITestV2
             //S8 「登録する」ボタンを押下
             notifyOtherPage.TapRegisterBtn();
 
+            //端末言語取得
+            var cultureText = AppManager.GetCurrentCultureBackDoor();
+
             //S8 「登録します」ポップアップの「キャンセル」を押下
-            notifyOtherPage.TapRegisterCancelBtn();
+            notifyOtherPage.TapRegisterCancelBtn(cultureText);
 
             //S8 「登録をキャンセルしました」ポップアップの「OK」を押下
             notifyOtherPage.TapCancelDialogOKBtn();

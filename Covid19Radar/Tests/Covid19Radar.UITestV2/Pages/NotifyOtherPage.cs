@@ -54,8 +54,8 @@ namespace CovidRadar.UITestV2
 
             if (OniOS)
             {
-                openHowToReceiveProcessingNumberBtn_NotCheckRadioBtn = x => x.Marked("NotifyOtherPageTitle").Class("UILabel").Index(3);//処理番号の取得方法(ラジオボタン未選択時)
-                openHowToReceiveProcessingNumberBtn_CheckedRadioBtn = x => x.Marked("NotifyOtherPageTitle").Class("UILabel").Index(4);//処理番号の取得方法(ラジオボタン選択時)
+                openHowToReceiveProcessingNumberBtn_NotCheckRadioBtn = x => x.Marked("NotifyOtherPageTitle").Class("UILabel").Index(5);//処理番号の取得方法(ラジオボタン未選択時)
+                openHowToReceiveProcessingNumberBtn_CheckedRadioBtn = x => x.Marked("NotifyOtherPageTitle").Class("UILabel").Index(6);//処理番号の取得方法(ラジオボタン選択時)
                 SymptomRadioBtn = x => x.Marked("NotifyOtherPageTitle").Class("UILabel").Index(2);//症状の有無(あり)ラジオボタン
                 ProcessingNumberForm = x => x.Id("NotifyOtherPageTitleEntry");//陽性番号入力フォーム
                 RegisterBtn = x => x.Marked("NotifyOtherPageTitle").Class("UIButton").Index(0);//登録するボタン

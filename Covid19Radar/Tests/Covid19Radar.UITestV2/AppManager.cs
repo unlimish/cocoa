@@ -129,14 +129,18 @@ namespace CovidRadar.UITestV2
         public static String GetTItleText()
         {
             //端末言語取得
-            var title = app.Query(x => x.Css("h1"))[0];
-            
+            var title = "";
+
+            if (Platform == Platform.Android)
+            {
+                title = app.Query(x => x.Css("h1"))[0].TextContent;
+            }
             if (Platform == Platform.iOS)
             {
-                title = app.Query(c => c.Class("WKWebView").Css("H1"))[0];
+                title = app.Query(c => c.Class("WKWebView").Css("H1"))[0].TextContent;
             }
 
-            return title.TextContent;
+            return title;
         }
     }
 }

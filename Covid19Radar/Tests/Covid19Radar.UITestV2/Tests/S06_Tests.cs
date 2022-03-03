@@ -127,15 +127,7 @@ namespace CovidRadar.UITestV2
 
             //S7 初回ナビゲーション完了画面で、遷移先選択肢ボタンをパターンを参照して押下
             //期待値 : 「使い方」画面に遷移すること
-            tutorialPage6.OpenHomePage();
-
-            HomePage homePage = new HomePage();
-            homePage.AssertHomePage();
-
-            MenuPage menuPage = homePage.OpenMenuPage();
-            menuPage.AssertMenuPage();
-
-            HelpMenuPage helpMenuPage = menuPage.OpenHelpMenuPage();
+            HelpMenuPage helpMenuPage = tutorialPage6.OpenHelpMenuPage();
             helpMenuPage.AssertHelpMenuPage();
 
         }

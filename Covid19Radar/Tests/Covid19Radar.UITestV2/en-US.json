@@ -5,4 +5,5 @@
   "HelpPage4Title" : { "value" : "Reinitialize the app"},
   "HomePageDescription2" : { "value" : "Check contact with positive testers"},
   "ButtonRegister" : { "value" : "Register"},
+  "ButtonCancel" : { "value" : "Cancel"},
 }

@@ -130,9 +130,6 @@ namespace CovidRadar.UITestV2
         }
         public void TapRegisterConfirmBtn(String cultureText = "")
         {
-            app.Tap(RegisterConfirmBtn);//陽性情報の登録をしますダイアログ→(「登録」ボタン)
-            //COVID - 19接触のログ記録を有効にしてください→「OK」ボタンを押下する際は以下の一文をコメントアウトする
-            //app.Tap(RegisterConfirmBtn);
 
             if (OnAndroid)
             {
@@ -152,7 +149,15 @@ namespace CovidRadar.UITestV2
         }
         public void TapCancelDialogOKBtn()
         {
-            app.Tap(CancelDialogOKBtn);
+            if (OnAndroid)
+            {
+                app.Tap(CancelDialogOKBtn);
+            }
+
+            if (OniOS)
+            {
+                app.Tap("OK");//陽性情報の登録をしますダイアログ→(「登録」ボタン)
+            }
         }
     }
 

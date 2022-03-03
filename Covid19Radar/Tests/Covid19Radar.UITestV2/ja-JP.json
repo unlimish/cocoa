@@ -5,4 +5,5 @@
   "NotifyOtherPageDialogSubmittedTitle" : { "value" : "登録が完了しました"},
   "NotifyOtherPageDiagReturnHomeTitle" : { "value" : "登録回数の上限に達しました"},
   "ButtonRegister" : { "value" : "登録"},
+  "ButtonCancel" : { "value" : "キャンセル"},
 }

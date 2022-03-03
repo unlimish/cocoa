@@ -63,18 +63,23 @@ namespace CovidRadar.UITestV2
             //S6 「登録する」ボタンを押下
             notifyOtherPage.TapRegisterBtn();
 
+            //端末言語取得
+            var cultureText = AppManager.GetCurrentCultureBackDoor();
+
             //S7 「登録します」ポップアップの「登録」を押下
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
 
-            app.WaitForElement(x => x.Id("alertTitle"));
-            var message = app.Query(x => x.Id("alertTitle"))[0];
 
-            //比較する単語をjsonから取得
+            //言語から比較する単語をjsonから取得
             string ComparisonText = (string)AppManager.Comparison("ja-JP", "NotifyOtherPageDialogSubmittedTitle");
+
+            app.WaitForElement(x => x.Text(ComparisonText));
+            var message = app.Query(x => x.Text(ComparisonText))[0];
 
             //S8(文字比較) 「登録が完了しました」ポップアップが表示されること
             Assert.AreEqual(message.Text, ComparisonText);
+
 
         }
 

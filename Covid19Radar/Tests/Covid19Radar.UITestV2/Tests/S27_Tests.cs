@@ -50,14 +50,11 @@ namespace CovidRadar.UITestV2
             //S7 「登録します」ポップアップの「登録」を押下
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
 
-            //メッセージの取得
-            app.WaitForElement(x => x.Id("message"));
-            var message = app.Query(x => x.Id("message"))[0];
-
-            
-
             //言語から比較する単語をjsonから取得
             string ComparisonText = (string)AppManager.Comparison(cultureText, "ExposureNotificationHandler1ErrorMessage");
+            //メッセージの取得
+            app.WaitForElement(x => x.Text(ComparisonText)); //「ComparisonText」を含むビューを取得
+            var message = app.Query(x => x.Text(ComparisonText))[0];
 
             //S8(文字比較) 「処理番号が誤っているか、有効期限が切れています」のポップアップが表示されること
             Assert.AreEqual(message.Text, ComparisonText);

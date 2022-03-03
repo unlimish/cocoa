@@ -124,5 +124,19 @@ namespace CovidRadar.UITestV2
             }
             return cultureText;
         }
+
+
+        public static String GetTItleText()
+        {
+            //端末言語取得
+            var title = app.Query(x => x.Css("h1"))[0];
+            
+            if (Platform == Platform.iOS)
+            {
+                title = app.Query(c => c.Class("WKWebView").Css("H1"))[0];
+            }
+
+            return title.TextContent;
+        }
     }
 }

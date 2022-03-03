@@ -39,22 +39,15 @@ namespace CovidRadar.UITestV2
             termsofservicePage.AssertTermsofservicePage();
 
             //端末言語取得
-            var culture = app.Invoke("GetCurrentCulture");
-
-            //利用規約タイトル取得
-            var message = app.Query(c => c.Css("H1"))[0];
-
-            if (OniOS)
-            {
-                message = app.Query(c => c.Class("WKWebView").Css("H1"))[0];
-            }
-
             var cultureText = AppManager.GetCurrentCultureBackDoor();
 
+            //比較単語を取得
             string ComparisonText = (string)AppManager.Comparison(cultureText, "termofusehtml");
 
+            //タイトル取得  
+            var message = AppManager.GetTItleText();
             //比較
-            Assert.AreEqual(message.TextContent, ComparisonText);
+            Assert.AreEqual(message, ComparisonText);
         }
 
     }

@@ -4,4 +4,5 @@
   "ExposureNotificationHandler1ErrorMessage" : { "value" : "The processing number is incorrect or has expired"},
   "HelpPage4Title" : { "value" : "Reinitialize the app"},
   "HomePageDescription2" : { "value" : "Check contact with positive testers"},
+  "ButtonRegister" : { "value" : "Register"},
 }

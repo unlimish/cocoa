@@ -44,15 +44,17 @@ namespace CovidRadar.UITestV2
             //S6 「登録する」ボタンを押下
             notifyOtherPage.TapRegisterBtn();
 
+            //端末言語取得
+            var cultureText = AppManager.GetCurrentCultureBackDoor();
+
             //S7 「登録します」ポップアップの「登録」を押下
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
 
             //メッセージの取得
             app.WaitForElement(x => x.Id("message"));
             var message = app.Query(x => x.Id("message"))[0];
 
-            //端末言語取得
-            var cultureText = AppManager.GetCurrentCultureBackDoor();
+            
 
             //言語から比較する単語をjsonから取得
             string ComparisonText = (string)AppManager.Comparison(cultureText, "ExposureNotificationHandler1ErrorMessage");

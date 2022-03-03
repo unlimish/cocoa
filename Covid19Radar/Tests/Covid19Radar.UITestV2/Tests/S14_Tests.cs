@@ -34,7 +34,6 @@ namespace CovidRadar.UITestV2
             // S2 ハンバーガーメニューで、「お問い合わせ」ボタンを押下
             InqueryPage inqueryPage = menuPage.OpenInqueryPage();
             inqueryPage.AssertInqueryPage();
-            app.Query(e => e.Id("userName").Invoke("setGravity", 1));
 
             // S3 「アプリに関するお問い合わせ」画面で、「よくある質問」ボタンを押下
             inqueryPage.TapOpenFAQBtn();

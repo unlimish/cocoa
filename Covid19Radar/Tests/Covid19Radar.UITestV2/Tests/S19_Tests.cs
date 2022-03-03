@@ -35,14 +35,16 @@ namespace CovidRadar.UITestV2
 
             // S3 「アプリに関するお問い合わせ」画面で、「接触確認アプリに関する情報」のリンクを押下
             inqueryPage.TapAppImfoLink();
+            app.Screenshot("AppImfo");
         }
 
+        /*
         [TearDown]
         public override void TearDown()
         {
             app.Invoke("FinishAndRemoveTask");
         }
-
+        */
 
     }
 }

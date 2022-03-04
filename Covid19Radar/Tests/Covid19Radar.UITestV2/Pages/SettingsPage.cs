@@ -43,7 +43,7 @@ namespace CovidRadar.UITestV2
             {
                 openLicenseAgreementPage = x => x.Marked("SettingsPageTitle").Class("UIButton").Index(0); //ライセンスページ
                 toolBarBack = x => x.Id("BackButton").Class("UIButton").Index(0); //戻るボタン
-                openMenuPage = x => x.Class("UIButton").Marked("OK"); //ハンバーガーメニュー
+                openMenuPage = x => x.Class("UIButton").Index(3);//ハンバーガーメニュー
                 syokika = x => x.Marked("SettingsPageTitle").Class("UIButton").Index(1); //アプリ初期化
             }
         }

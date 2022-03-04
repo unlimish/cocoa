@@ -76,7 +76,7 @@ namespace CovidRadar.UITestV2
             settingsPage.AssertSettingsPage();
 
             //S13 「設定」画面左上のハンバーガーメニューを押下
-            homePage.OpenMenuPage();
+            settingsPage.OpenMenuPage();
             menuPage.AssertMenuPage();
 
             //S14 ハンバーガーメニュー左上の戻るボタンを押下
@@ -84,7 +84,7 @@ namespace CovidRadar.UITestV2
             settingsPage.AssertSettingsPage();
 
             //S15 「設定」画面左上のハンバーガーメニューを押下
-            homePage.OpenMenuPage();
+            settingsPage.OpenMenuPage();
             menuPage.AssertMenuPage();
 
             //S16 ハンバーガーメニューで、「お問い合わせ」ボタンを押下
@@ -100,7 +100,7 @@ namespace CovidRadar.UITestV2
             inqueryPage.AssertInqueryPage();
 
             //S19 「設定」画面左上のハンバーガーメニューを押下
-            homePage.OpenMenuPage();
+            inqueryPage.OpenMenuPage();
             menuPage.AssertMenuPage();
 
             //S20 ハンバーガーメニュー左上の戻るボタンを押下
@@ -108,7 +108,7 @@ namespace CovidRadar.UITestV2
             inqueryPage.AssertInqueryPage();
 
             //S21 「設定」画面左上のハンバーガーメニューを押下
-            homePage.OpenMenuPage();
+            inqueryPage.OpenMenuPage();
             menuPage.AssertMenuPage();
 
             //S22 ハンバーガーメニューで、「使い方」ボタンを押下
@@ -188,7 +188,7 @@ namespace CovidRadar.UITestV2
             helpMenuPage.AssertHelpMenuPage();
 
             //S41 「使い方」画面左上のハンバーガーメニューを押下
-            homePage.OpenMenuPage();
+            helpMenuPage.OpenMenuPage();
             menuPage.AssertMenuPage();
 
             //S42 ハンバーガーメニュー左上の戻るボタンを押下
@@ -196,7 +196,7 @@ namespace CovidRadar.UITestV2
             helpMenuPage.AssertHelpMenuPage();
 
             //S43 「使い方」画面で、ハンバーガーメニューを押下
-            homePage.OpenMenuPage();
+            helpMenuPage.OpenMenuPage();
             menuPage.AssertMenuPage();
 
             //S44 ハンバーガーメニューで、「利用規約」ボタンを押下 (使い方ページからの場合指定する先の順番が変わる)
@@ -204,7 +204,7 @@ namespace CovidRadar.UITestV2
             termsofservicePage.AssertTermsofservicePage();
 
             //S45 「利用規約」画面左上のハンバーガーメニューを押下
-            homePage.OpenMenuPage();
+            termsofservicePage.OpenMenuPage();
             menuPage.AssertMenuPage();
 
             //S46 ハンバーガーメニュー左上の戻るボタンを押下
@@ -212,7 +212,7 @@ namespace CovidRadar.UITestV2
             termsofservicePage.AssertTermsofservicePage();
 
             //S47 「利用規約」画面で、ハンバーガーメニューを押下
-            homePage.OpenMenuPage();
+            termsofservicePage.OpenMenuPage();
             menuPage.AssertMenuPage();
 
             //S48 ハンバーガーメニューで、「プライバシーポリシー」ボタンを押下
@@ -220,7 +220,7 @@ namespace CovidRadar.UITestV2
             privacyPolicyPage2.AssertPrivacyPolicyPage2();
 
             //S49 「プライバシーポリシー」画面左上のハンバーガーメニューを押下
-            homePage.OpenMenuPage();
+            privacyPolicyPage2.OpenMenuPage();
             menuPage.AssertMenuPage();
 
             //S50 ハンバーガーメニュー左上の戻るボタンを押下
@@ -228,7 +228,7 @@ namespace CovidRadar.UITestV2
             privacyPolicyPage2.AssertPrivacyPolicyPage2();
 
             //S51 「プライバシーポリシー」画面で、ハンバーガーメニューを押下
-            homePage.OpenMenuPage();
+            privacyPolicyPage2.OpenMenuPage();
             menuPage.AssertMenuPage();
 
             //S52 ハンバーガーメニューで、「ウェブアクセシビリティ方針」ボタンを押下
@@ -236,7 +236,7 @@ namespace CovidRadar.UITestV2
             webAccessibilityPolicyPage.AssertWebAccessibilityPolicyPage();
 
             //S53 「ウェブアクセシビリティ方針」画面左上のハンバーガーメニューを押下
-            homePage.OpenMenuPage();
+            webAccessibilityPolicyPage.OpenMenuPage();
             menuPage.AssertMenuPage();
 
             //S54 ハンバーガーメニュー左上の戻るボタンを押下
@@ -244,7 +244,7 @@ namespace CovidRadar.UITestV2
             webAccessibilityPolicyPage.AssertWebAccessibilityPolicyPage();
 
             //S55 「ウェブアクセシビリティ方針」画面左上のハンバーガーメニューを押下
-            homePage.OpenMenuPage();
+            webAccessibilityPolicyPage.OpenMenuPage();
             menuPage.AssertMenuPage();
 
             //S56 ハンバーガーメニュー左上の「ホーム」ボタンを押下

@@ -59,9 +59,6 @@ namespace CovidRadar.UITestV2
                 SymptomRadioBtn = x => x.Marked("NotifyOtherPageTitle").Class("UILabel").Index(2);//症状の有無(あり)ラジオボタン
                 ProcessingNumberForm = x => x.Id("NotifyOtherPageTitleEntry");//陽性番号入力フォーム
                 RegisterBtn = x => x.Marked("NotifyOtherPageTitle").Class("UIButton").Index(0);//登録するボタン
-                RegisterConfirmBtn = x => x.Id("button1");//2種類のボタンに同じIDが振られていることに注意。陽性情報の登録をしますダイアログ→(「登録」ボタン)　　COVID-19接触のログ記録を有効にしてください→(「OK」ボタン)
-                RegisterCancelBtn = x => x.Id("button2");//陽性情報の登録をしますダイアログ→(「キャンセル」ボタン)
-                CancelDialogOKBtn = x => x.Id("button1");//「登録をキャンセルしました」ダイアログでのOKボタン
                 toolBarBack = x => x.Id("BackButton").Class("UIButton").Index(0); //戻るボタン
             }
         }

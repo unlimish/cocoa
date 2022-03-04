@@ -40,13 +40,16 @@ namespace CovidRadar.UITestV2
             //app.Screenshot("FAQ Page");
         }
 
-        /*
+        
         [TearDown]
         public override void TearDown()
         {
-            app.Invoke("FinishAndRemoveTask");
+            if (OnAndroid)
+            {
+                app.Invoke("FinishAndRemoveTask");
+            } 
         }
-        */
+        
 
     }
 }

@@ -9,7 +9,7 @@ namespace CovidRadar.UITestV2
 {
     [TestFixture(Platform.Android)]
     [TestFixture(Platform.iOS)]
-    [Culture("ko-KR")]
+    [Category("ko-KR")]
     public class S28_Tests : BaseTestFixture
 
     {

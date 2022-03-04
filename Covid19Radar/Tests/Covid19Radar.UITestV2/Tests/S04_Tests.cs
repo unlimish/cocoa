@@ -9,7 +9,7 @@ namespace CovidRadar.UITestV2
 {
     [TestFixture(Platform.Android)]
     [TestFixture(Platform.iOS)]
-    
+    [Category("ja-JP")]
     public class S04_Tests : BaseTestFixture
     {
         public S04_Tests(Platform platform)
@@ -19,7 +19,6 @@ namespace CovidRadar.UITestV2
 
 
         [Test]
-        [Culture("ja-JP")]
         public void Case03_Test()
         {
             //前提：接触通知設定ON状態
@@ -82,7 +81,6 @@ namespace CovidRadar.UITestV2
 
 
         [Test]
-        [Culture("ja")]
         public void Case04_Test()
         {
             //前提：接触通知設定ON状態
@@ -147,7 +145,6 @@ namespace CovidRadar.UITestV2
 
 
         [Test]
-        [Culture("JP")]
         public void Case05_Test()
         {
             //前提：接触通知設定ON状態

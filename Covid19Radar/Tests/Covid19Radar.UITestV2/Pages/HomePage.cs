@@ -64,7 +64,6 @@ namespace CovidRadar.UITestV2
         {
             app.Screenshot(this.GetType().Name.ToString());
             base.AssertOnPage(timeout);
-            app.Screenshot(this.GetType().Name.ToString());
         }
 
         // ハンバーガーメニューのタップ

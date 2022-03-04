@@ -43,8 +43,8 @@ namespace CovidRadar.UITestV2
         // メニュー表示確認
         public void AssertHowToReceiveProcessingNumberPage(TimeSpan? timeout = default(TimeSpan?))
         {
-            base.AssertOnPage(timeout);
             app.Screenshot(this.GetType().Name.ToString());
+            base.AssertOnPage(timeout);
         }
         public void ToolBarBack()
         {

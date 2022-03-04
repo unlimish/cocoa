@@ -61,6 +61,7 @@ namespace CovidRadar.UITestV2
         */
 
         [Test]
+        [Culture(Exclude = "en-US,Zh-Hans")]
         public void Case02_Test()
         {
             HomePage home = new HomePage();

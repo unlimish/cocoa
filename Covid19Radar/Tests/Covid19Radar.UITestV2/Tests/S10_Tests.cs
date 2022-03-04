@@ -10,6 +10,7 @@ namespace CovidRadar.UITestV2
 {
     [TestFixture(Platform.Android)]
     [TestFixture(Platform.iOS)]
+    [Culture("ja-JP")]
     public class S10_Tests : BaseTestFixture
     {
         public S10_Tests(Platform platform)

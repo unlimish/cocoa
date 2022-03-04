@@ -9,6 +9,7 @@ namespace CovidRadar.UITestV2
 {
     [TestFixture(Platform.Android)]
     [TestFixture(Platform.iOS)]
+    [Culture("ja-JP")]
     public class S01_Tests : BaseTestFixture
     {
         public S01_Tests(Platform platform)
@@ -18,7 +19,6 @@ namespace CovidRadar.UITestV2
 
 
         [Test]
-        [Category("Cat01")]
         public void Case01_Test()
         {
             HomePage homePage = new HomePage();

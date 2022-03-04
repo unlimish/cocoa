@@ -64,14 +64,17 @@ namespace CovidRadar.UITestV2
             //S10 「登録する」ボタンを押下
             notifyOtherPage.TapRegisterBtn();
 
+            //端末言語取得
+            var cultureText = AppManager.GetCurrentCultureBackDoor();
+
             //S11 「登録します」ポップアップの「登録」を押下
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
 
             //TODO:以下の実装を加える
             //S12 ほかの人に通知するために情報を共有しますか？画面でパターンを参照して選択肢を押下し、「陽性情報の登録」画面に遷移する。
             
             //S13 「登録完了」ポップアップでOK押下
-            notifyOtherPage.TapRegisterConfirmBtn();
+            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             homePage.AssertHomePage();
         }
 

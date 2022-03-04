@@ -62,6 +62,7 @@ namespace CovidRadar.UITestV2
         // ページ表示確認
         public void AssertHomePage(TimeSpan? timeout = default(TimeSpan?))
         {
+            app.Screenshot(this.GetType().Name.ToString());
             base.AssertOnPage(timeout);
             app.Screenshot(this.GetType().Name.ToString());
         }

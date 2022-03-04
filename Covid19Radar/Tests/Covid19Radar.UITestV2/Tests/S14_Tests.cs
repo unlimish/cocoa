@@ -37,7 +37,7 @@ namespace CovidRadar.UITestV2
 
             // S3 「アプリに関するお問い合わせ」画面で、「よくある質問」ボタンを押下
             inqueryPage.TapOpenFAQBtn();
-            app.Screenshot("FAQ Page");
+            //app.Screenshot("FAQ Page");
         }
 
         /*

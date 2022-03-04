@@ -54,7 +54,7 @@ namespace CovidRadar.UITestV2
             //言語から比較する単語をjsonから取得
             string ComparisonText = (string)AppManager.Comparison(cultureText, "ExposureNotificationHandler1ErrorMessage");
             //メッセージの取得
-            app.WaitForElement(x => x.Text(ComparisonText)); //「ComparisonText」を含むビューを取得
+            app.WaitForElement(x => x.Text(ComparisonText),"30"); //「ComparisonText」を含むビューを取得
             var message = app.Query(x => x.Text(ComparisonText))[0];
 
             //S8(文字比較) 「処理番号が誤っているか、有効期限が切れています」のポップアップが表示されること

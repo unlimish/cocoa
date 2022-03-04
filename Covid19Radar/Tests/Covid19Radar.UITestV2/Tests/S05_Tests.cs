@@ -75,7 +75,7 @@ namespace CovidRadar.UITestV2
             //S12 ほかの人に通知するために情報を共有しますか？画面でパターンを参照して選択肢を押下し、「陽性情報の登録」画面に遷移する。
             
             //S13 「登録完了」ポップアップでOK押下
-            notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.TapCancelDialogOKBtn();
             homePage.AssertHomePage();
         }
 

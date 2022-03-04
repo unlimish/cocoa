@@ -137,7 +137,7 @@ namespace CovidRadar.UITestV2
             //言語から比較する単語をjsonから取得
             string ComparisonText = (string)AppManager.Comparison(cultureText, "ExposureNotificationHandler1ErrorMessage");
 
-            app.WaitForElement(x => x.Text(ComparisonText));
+            app.WaitForElement(x => x.Text(ComparisonText),"30");
             var message = app.Query(x => x.Text(ComparisonText))[0];
 
             //S8(文字比較) 「登録が完了しました」ポップアップが表示されること
@@ -207,7 +207,7 @@ namespace CovidRadar.UITestV2
             //言語から比較する単語をjsonから取得
             string ComparisonText = (string)AppManager.Comparison(cultureText, "NotifyOtherPageDiagReturnHomeTitle");
 
-            app.WaitForElement(x => x.Text(ComparisonText));
+            app.WaitForElement(x => x.Text(ComparisonText), "30");
             var message = app.Query(x => x.Text(ComparisonText))[0];
 
             //S8(文字比較) 「登録回数の上限に達しました」ポップアップが表示されること
@@ -280,7 +280,7 @@ namespace CovidRadar.UITestV2
             //言語から比較する単語をjsonから取得
             string ComparisonText = (string)AppManager.Comparison(cultureText, "NotifyOtherPageDiagReturnHomeTitle");
 
-            app.WaitForElement(x => x.Text(ComparisonText));
+            app.WaitForElement(x => x.Text(ComparisonText), "30");
             var message = app.Query(x => x.Text(ComparisonText))[0];
 
             //S8(文字比較) 「登録回数の上限に達しました」ポップアップが表示されること
@@ -372,7 +372,7 @@ namespace CovidRadar.UITestV2
             //言語から比較する単語をjsonから取得
             string ComparisonText = (string)AppManager.Comparison(cultureText, "NotifyOtherPageDialogSubmittedTitle");
 
-            app.WaitForElement(x => x.Text(ComparisonText));
+            app.WaitForElement(x => x.Text(ComparisonText), "30");
             var message = app.Query(x => x.Text(ComparisonText))[0];
 
             //S8(文字比較) 「登録回数の上限に達しました」ポップアップが表示されること
@@ -460,7 +460,7 @@ namespace CovidRadar.UITestV2
             //言語から比較する単語をjsonから取得
             string ComparisonText = (string)AppManager.Comparison(cultureText, "ExposureNotificationHandler1ErrorMessage");
 
-            app.WaitForElement(x => x.Text(ComparisonText));
+            app.WaitForElement(x => x.Text(ComparisonText), "30");
             var message = app.Query(x => x.Text(ComparisonText))[0];
 
             //S8(文字比較) 「登録回数の上限に達しました」ポップアップが表示されること

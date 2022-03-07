@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -140,6 +141,45 @@ namespace CovidRadar.UITestV2
             }
 
             return title;
+        }
+
+
+        public static String RegistResultBranch(String cultureText)
+        {
+            string ComparisonText = "";
+            if (Platform == Platform.Android)
+            {
+                //センターに接続できません
+                ComparisonText = (string)AppManager.Comparison(cultureText, "ExposureNotificationHandler2ErrorMessage");
+            }
+
+            if (Platform == Platform.iOS)
+            {
+                //登録が完了しました
+                ComparisonText = (string)AppManager.Comparison(cultureText, "NotifyOtherPageDialogSubmittedTitle");
+            }
+
+            return ComparisonText;
+
+        }
+
+        public static String RegistResultBranch2(String cultureText)
+        {
+            string ComparisonText = "";
+            if (Platform == Platform.Android)
+            {
+                //センターに接続できません
+                ComparisonText = (string)AppManager.Comparison(cultureText, "ExposureNotificationHandler2ErrorMessage");
+            }
+
+            if (Platform == Platform.iOS)
+            {
+                //処理番号が誤っているか、有効期限が切れています
+                ComparisonText = (string)AppManager.Comparison(cultureText, "ExposureNotificationHandler1ErrorMessage");
+            }
+
+            return ComparisonText;
+
         }
     }
 }

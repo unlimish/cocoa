@@ -76,7 +76,12 @@ namespace CovidRadar.UITestV2
             
             //S13 「登録完了」ポップアップでOK押下
             notifyOtherPage.TapCancelDialogOKBtn();
-            homePage.AssertHomePage();
+
+            if (OniOS)
+            {
+                homePage.AssertHomePage();
+            }
+            
         }
 
 

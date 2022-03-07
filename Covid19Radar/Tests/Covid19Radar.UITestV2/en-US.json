@@ -6,4 +6,5 @@
   "HomePageDescription2" : { "value" : "Check contact with positive testers"},
   "ButtonRegister" : { "value" : "Register"},
   "ButtonCancel" : { "value" : "Cancel"},
+  "ExposureNotificationHandler2ErrorMessage": { "value": "Cannot connect to registration center" }
 }

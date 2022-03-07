@@ -52,7 +52,8 @@ namespace CovidRadar.UITestV2
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
 
             //言語から比較する単語をjsonから取得
-            string ComparisonText = (string)AppManager.Comparison(cultureText, "ExposureNotificationHandler1ErrorMessage");
+            string ComparisonText = AppManager.RegistResultBranch2(cultureText);
+
             //メッセージの取得
             app.WaitForElement(x => x.Text(ComparisonText),"30"); //「ComparisonText」を含むビューを取得
             var message = app.Query(x => x.Text(ComparisonText))[0];

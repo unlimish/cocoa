@@ -5,4 +5,5 @@
   "HelpPage4Title" : { "value" : "应用初始化"},
   "ButtonRegister" : { "value" : "登记"},
   "ButtonCancel" : { "value" : "取消"},
+  "ExposureNotificationHandler2ErrorMessage": { "value": "无法连接到登记服务中心" }
 }

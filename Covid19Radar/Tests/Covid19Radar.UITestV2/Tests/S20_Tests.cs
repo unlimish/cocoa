@@ -45,7 +45,7 @@ namespace CovidRadar.UITestV2
             string ComparisonText = (string)AppManager.Comparison(cultureText, "termofusehtml");
 
             //タイトル取得  
-            var message = AppManager.GetTItleText();
+            var message = AppManager.GetTitleText();
             //比較
             Assert.AreEqual(message, ComparisonText);
         }

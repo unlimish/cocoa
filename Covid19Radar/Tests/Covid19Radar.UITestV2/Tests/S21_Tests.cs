@@ -45,7 +45,7 @@ namespace CovidRadar.UITestV2
             string ComparisonText = (string)AppManager.Comparison(cultureText, "privacypolicyhtml");
 
             //タイトル取得  
-            var privacypolicytitle = AppManager.GetTItleText();
+            var privacypolicytitle = AppManager.GetTitleText();
 
             //比較
             Assert.AreEqual(privacypolicytitle, ComparisonText);

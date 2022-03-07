@@ -126,9 +126,8 @@ namespace CovidRadar.UITestV2
         }
 
 
-        public static String GetTItleText()
+        public static String GetTitleText()
         {
-            //端末言語取得
             var title = "";
 
             if (Platform == Platform.Android)

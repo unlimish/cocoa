@@ -40,6 +40,7 @@ namespace CovidRadar.UITestV2
                 openHelpPage3 = x => x.Marked("HelpMenuPageTitle").Class("LabelRenderer").Index(2); //新型コロナウイルスに感染していると判定されたら
                 openHelpPage4 = x => x.Marked("HelpMenuPageTitle").Class("LabelRenderer").Index(3); //接触の記録を停止/情報を削除するには
                 toolBarBack = x => x.Id("toolbar").Class("AppCompatImageButton").Index(0); //戻るボタン
+                openMenuPage = x => x.Class("AppCompatImageButton").Index(0); //ハンバーガーメニュー
             }
 
             if (OniOS)

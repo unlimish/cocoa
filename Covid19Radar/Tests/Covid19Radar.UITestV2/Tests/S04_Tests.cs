@@ -70,7 +70,7 @@ namespace CovidRadar.UITestV2
             notifyOtherPage.TapCancelDialogOKBtn();
 
             //言語から比較する単語をjsonから取得
-            string ComparisonText = (string)AppManager.Comparison(cultureText, "NotifyOtherPageDialogSubmittedTitle");
+            string ComparisonText = (string)AppManager.Comparison(cultureText, "ExposureNotificationHandler1ErrorMessage");
 
             app.WaitForElement(x => x.Text(ComparisonText));
             var message = app.Query(x => x.Text(ComparisonText))[0];
@@ -367,7 +367,7 @@ namespace CovidRadar.UITestV2
 
 
             //言語から比較する単語をjsonから取得
-            string ComparisonText = (string)AppManager.Comparison(cultureText, "NotifyOtherPageDialogSubmittedTitle");
+            string ComparisonText = (string)AppManager.Comparison(cultureText, "ExposureNotificationHandler1ErrorMessage");
 
             app.WaitForElement(x => x.Text(ComparisonText), "30");
             var message = app.Query(x => x.Text(ComparisonText))[0];

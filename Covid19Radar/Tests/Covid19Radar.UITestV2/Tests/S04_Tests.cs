@@ -136,7 +136,7 @@ namespace CovidRadar.UITestV2
 
 
             //言語から比較する単語をjsonから取得
-            string ComparisonText = AppManager.RegistResultBranch(cultureText);
+            string ComparisonText = AppManager.RegistResultBranch2(cultureText);
 
             app.WaitForElement(x => x.Text(ComparisonText), "30");
             var message = app.Query(x => x.Text(ComparisonText))[0];

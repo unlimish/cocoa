@@ -11,7 +11,7 @@ namespace CovidRadar.UITestV2
     [TestFixture(Platform.iOS)]
     [Category("ja-JP")]
     [Category("en-US")]
-    [Category("zh-Hans")]
+    [Category("zh-CN")]
     [Category("ko-KR")]
     public class S21_Tests : BaseTestFixture
 

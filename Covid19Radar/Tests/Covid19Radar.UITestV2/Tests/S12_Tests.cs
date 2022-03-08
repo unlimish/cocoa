@@ -62,7 +62,7 @@ namespace CovidRadar.UITestV2
 
         [Test]
         [Category("en-US")]
-        [Category("zh-Hans")]
+        [Category("zh-CN")]
         public void Case02_Test()
         {
             HomePage home = new HomePage();

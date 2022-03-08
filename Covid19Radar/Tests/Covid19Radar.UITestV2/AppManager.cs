@@ -123,6 +123,14 @@ namespace CovidRadar.UITestV2
             {
                 cultureText = "ja-JP";
             }
+            else if (cultureText == "ko")
+            {
+                cultureText = "en-US";
+            }
+            else if (cultureText == "ko-KR")
+            {
+                cultureText = "en-US";
+            }
             return cultureText;
         }
 

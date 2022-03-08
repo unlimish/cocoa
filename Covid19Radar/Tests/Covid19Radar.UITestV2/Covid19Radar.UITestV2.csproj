@@ -98,7 +98,7 @@
     <Compile Include="Tests\S28_Tests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="zh-Hans.json">
+    <None Include="zh-CN.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="en-US.json">

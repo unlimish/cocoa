@@ -201,7 +201,7 @@ namespace Covid19Radar.Droid
             }
         }
 
-        //ENABLE_TEST_CLOUD
+#if ENABLE_TEST_CLOUD
 
         [Java.Interop.Export("GetCurrentCulture")]
         public String GetCurrentCulture()
@@ -216,6 +216,7 @@ namespace Covid19Radar.Droid
         {
             FinishAndRemoveTask();
         }
+#endif
 
     }
 }

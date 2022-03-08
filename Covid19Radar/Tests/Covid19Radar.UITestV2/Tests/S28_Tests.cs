@@ -36,15 +36,15 @@ namespace CovidRadar.UITestV2
             HomePage home = new HomePage();
             home.AssertHomePage();
 
-            //HOMEPAGEのbuttonテキスト取得
-            var homepagebuttontitle = app.Query(x => x.Marked("MasterDetailPageTitle").Class("buttonRenderer").Index(0))[0];
 
             //言語から比較する単語をjsonから取得
             string ComparisonText = (string)AppManager.Comparison("en-US", "HomePageDescription2");
 
-            //比較
-            //期待値 : 遷移したホーム画面の言語が英語になっていること
-            Assert.AreEqual(homepagebuttontitle.Text, ComparisonText);
+            app.WaitForElement(x => x.Text(ComparisonText));
+            var message = app.Query(x => x.Text(ComparisonText))[0];
+
+            //S4(文字比較) 「登録が完了しました」ポップアップが表示されること
+            Assert.AreEqual(message.Text, ComparisonText);
 
         }
 

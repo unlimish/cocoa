@@ -17,7 +17,7 @@ namespace CovidRadar.UITestV2
         {
         }
 
-
+        /*
         [Test]
         public void Case01_Test()
         {
@@ -28,7 +28,7 @@ namespace CovidRadar.UITestV2
             //S2 「動作中」の下部の？ボタン押下
 
         }
-
+        */
         /*バックグラウンドからの起動が実装できないため、手動実行
         [Test]
         public void Case02_Test()
@@ -49,7 +49,7 @@ namespace CovidRadar.UITestV2
         */
 
         [Test]
-        public void Case17_Test()
+        public void Case1_Test()
         {
             //S1 ホーム画面に「動作中」と表示されていること
             HomePage home = new HomePage();

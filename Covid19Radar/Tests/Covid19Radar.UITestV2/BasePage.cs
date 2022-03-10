@@ -24,6 +24,20 @@ namespace CovidRadar.UITestV2
         /// <param name="timeout">Time to wait before the assertion fails</param>
         protected void AssertOnPage(TimeSpan? timeout = default(TimeSpan?))
         {
+            if (timeout == null)
+                app.Query(Trait.Current);
+            else
+                app.WaitForElement(Trait.Current, timeout: timeout);
+        }
+
+
+
+        /// <summary>
+        /// Verifies that the trait is still present. Defaults to no wait.
+        /// </summary>
+        /// <param name="timeout">Time to wait before the assertion fails</param>
+        protected void AssertOnPageDoesNotThrow(TimeSpan? timeout = default(TimeSpan?))
+        {
             var message = "Unable to verify on page: " + this.GetType().Name;
 
             if (timeout == null)
@@ -32,11 +46,25 @@ namespace CovidRadar.UITestV2
                 Assert.DoesNotThrow(() => app.WaitForElement(Trait.Current, timeout: timeout), message);
         }
 
+
+
         /// <summary>
         /// Verifies that the trait is no longer present. Defaults to a 5 second wait.
         /// </summary>
         /// <param name="timeout">Time to wait before the assertion fails</param>
         protected void WaitForPageToLeave(TimeSpan? timeout = default(TimeSpan?))
+        {
+            timeout = timeout ?? TimeSpan.FromSeconds(5);
+
+            app.WaitForNoElement(Trait.Current, timeout: timeout);
+        }
+
+
+        /// <summary>
+        /// Verifies that the trait is no longer present. Defaults to a 5 second wait.
+        /// </summary>
+        /// <param name="timeout">Time to wait before the assertion fails</param>
+        protected void WaitForPageToLeaveDoesNotThrow(TimeSpan? timeout = default(TimeSpan?))
         {
             timeout = timeout ?? TimeSpan.FromSeconds(5);
             var message = "Unable to verify *not* on page: " + this.GetType().Name;

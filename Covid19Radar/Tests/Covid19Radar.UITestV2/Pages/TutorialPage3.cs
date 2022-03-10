@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using NUnit.Framework;
 using Xamarin.UITest;
 
@@ -17,6 +18,7 @@ namespace CovidRadar.UITestV2
 
         readonly Query openPrivacyPolicyPage;
         readonly Query NetworkErrorDialogOKBtn;
+        //static int count;
 
         protected override PlatformQuery Trait => new PlatformQuery
         {
@@ -30,6 +32,7 @@ namespace CovidRadar.UITestV2
             
             NetworkErrorDialogOKBtn = x => x.Id("button1");//通信エラー時に、「規約に同意して次へ」押下時に出現するダイアログのOKボタン
 
+            //count = 0;
 
             if (OnAndroid)
             {
@@ -49,11 +52,32 @@ namespace CovidRadar.UITestV2
             base.AssertOnPage(timeout);
         }
 
-        public PrivacyPolicyPage OpenPrivacyPolicyPage()
+
+        public PrivacyPolicyPage OpenPrivacyPolicyPage(int count = 5)
         {
-            app.Tap(openPrivacyPolicyPage);
-            return new PrivacyPolicyPage();
+            PrivacyPolicyPage pp = null;
+            try
+            {
+                app.Tap(openPrivacyPolicyPage);
+                pp = new PrivacyPolicyPage();
+            }
+            catch (Exception e)
+            {
+                if (count > 0)
+                {
+                    app.Tap("OK");
+                    count--;
+                    OpenPrivacyPolicyPage(count);
+                }
+                else
+                {
+                    throw e;
+                }
+            }
+            return pp;
         }
+
+
 
         public void TapOpenPrivacyPolicyPage()
         {

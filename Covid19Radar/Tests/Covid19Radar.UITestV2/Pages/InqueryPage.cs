@@ -65,15 +65,11 @@ namespace CovidRadar.UITestV2
         public void TapOpenFAQBtn()
         {
             app.Tap(openFAQBtn);
-            //URLを取得する方法は保留中
-            //app.Query(x => x.Marked("{WebView AutomationId}").Invoke("getUrl"));
         }
 
         public void TapAppImfoLink()
         {
             app.Tap(appImfoLink);
-            //URLを取得する方法は保留中
-            //app.Query(x => x.Marked("{WebView AutomationId}").Invoke("getUrl"));
         }
 
 
@@ -81,7 +77,6 @@ namespace CovidRadar.UITestV2
         {
             app.Tap(openMenuPage);
             return new MenuPage();
-
         }
 
     }

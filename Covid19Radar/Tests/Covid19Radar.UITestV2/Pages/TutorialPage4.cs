@@ -63,17 +63,8 @@ namespace CovidRadar.UITestV2
 
         public TutorialPage6 OpenTutorialPage6BluetoothOff()
         {
-            
-            if (OnAndroid)
-            {
-                app.ScrollDownTo(openTutorialPage6BluetoothOff);
-            }
 
-            if (OniOS)
-            {
-                app.ScrollDownTo("TutorialPage4Button_2", "TutorialPage4ScrollView");
-            }
-
+            app.ScrollDownTo("TutorialPage4Button_2", "TutorialPage4ScrollView");
             app.Tap(openTutorialPage6BluetoothOff);
             return new TutorialPage6();
         }

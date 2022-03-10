@@ -95,17 +95,8 @@ namespace CovidRadar.UITestV2
 
         public void EnterProcessingNumberForm(string processingNumber="00000000")
         {
-            
-            if (OnAndroid)
-            {
-                app.ScrollDownTo(ProcessingNumberForm);
-            }
 
-            if (OniOS)
-            {
-                app.ScrollDownTo("NotifyOtherPageTitleEntry", "NotifyOtherPageTitleScrollView");
-            }
-
+            app.ScrollDownTo("NotifyOtherPageTitleEntry", "NotifyOtherPageTitleScrollView");
             app.Tap(ProcessingNumberForm);
             app.ClearText(ProcessingNumberForm);
             app.EnterText(processingNumber);
@@ -114,57 +105,25 @@ namespace CovidRadar.UITestV2
 
         public void TapRegisterBtn()
         {
-            if (OnAndroid)
-            {
-                app.ScrollDownTo(RegisterBtn);
-            }
-
-            if (OniOS)
-            {
-                app.ScrollDownTo("SubmitConsentPageBtn", "NotifyOtherPageTitleScrollView");
-            }
+            app.ScrollDownTo("SubmitConsentPageBtn", "NotifyOtherPageTitleScrollView");
             app.Tap(RegisterBtn);
         }
         public void TapRegisterConfirmBtn(String cultureText = "")
         {
 
-            if (OnAndroid)
-            {
-                app.Tap(RegisterConfirmBtn);//陽性情報の登録をしますダイアログ→(「登録」ボタン)
-            }
-
-            if (OniOS)
-            {
-                string ComparisonText = (string)AppManager.Comparison(cultureText, "ButtonRegister");
-                app.Tap(ComparisonText);//陽性情報の登録をしますダイアログ→(「登録」ボタン)
-            }
+            string ComparisonText = (string)AppManager.Comparison(cultureText, "ButtonRegister");
+            app.Tap(ComparisonText);//陽性情報の登録をしますダイアログ→(「登録」ボタン)
 
         }
         public void TapRegisterCancelBtn(String cultureText = "")
         {
- 
-            if (OnAndroid)
-            {
-                app.Tap(CancelDialogOKBtn);
-            }
 
-            if (OniOS)
-            {
-                string ComparisonText = (string)AppManager.Comparison(cultureText, "ButtonCancel");
-                app.Tap(ComparisonText);//陽性情報の登録をしますダイアログ→(「登録」ボタン)
-            }
+            string ComparisonText = (string)AppManager.Comparison(cultureText, "ButtonCancel");
+            app.Tap(ComparisonText);//陽性情報の登録をしますダイアログ→(「登録」ボタン)
         }
         public void TapCancelDialogOKBtn()
         {
-            if (OnAndroid)
-            {
-                app.Tap(CancelDialogOKBtn);
-            }
-
-            if (OniOS)
-            {
-                app.Tap("OK");//陽性情報の登録をしますダイアログ→(「登録」ボタン)
-            }
+            app.Tap("OK");//陽性情報の登録をしますダイアログ→(「登録」ボタン)
         }
     }
 

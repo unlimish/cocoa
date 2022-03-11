@@ -4,7 +4,7 @@
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
 <ContentPage
-    AutomationId="SubmitConsentPageTitle"
+    x:Name="SubmitConsentPageTitle"
     x:Class="Covid19Radar.Views.SubmitConsentPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -31,7 +31,7 @@
     -->
     <ContentView>
     <ScrollView
-           AutomationId="SubmitConsentPageScrollView"
+           x:Name="SubmitConsentPageScrollView"
         >
         <Grid Style="{StaticResource DefaultGridLayout}">
             <Grid.RowDefinitions>
@@ -152,7 +152,7 @@
             </StackLayout>
             <Grid Grid.Row="1">
                 <Button
-                    AutomationId="SubmitConsentPageScrollBtn"
+                    x:Name="SubmitConsentPageScrollBtn"
                     AutomationProperties.IsInAccessibleTree="{Binding IsNextButtonVisible}"
                     TabIndex="15"
                     Command="{prism:NavigateTo 'NotifyOtherPage'}"

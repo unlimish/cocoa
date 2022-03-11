@@ -4,7 +4,7 @@
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
 <ContentPage
-    AutomationId="TutorialPage4Title"
+    x:Name="TutorialPage4Title"
     x:Class="Covid19Radar.Views.TutorialPage4"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -31,7 +31,7 @@
             Text="{x:Static resources:AppResources.TutorialPage4Title2}" />
         <ScrollView
             Grid.Row="1"
-            AutomationId="TutorialPage4ScrollView"
+            x:Name="TutorialPage4ScrollView"
             >
             <Grid>
                 <Grid.RowDefinitions>
@@ -72,7 +72,7 @@
                             Style="{StaticResource DefaultButton}"
                             Text="{x:Static resources:AppResources.TutorialPage4Button1}" />
                         <Button
-                            AutomationId="TutorialPage4Button_2"
+                            x:Name="TutorialPage4Button_2"
                             AutomationProperties.IsInAccessibleTree="True"
                             TabIndex="5"
                             Margin="0,10,0,0"

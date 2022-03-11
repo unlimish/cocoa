@@ -13,6 +13,10 @@ namespace Covid19Radar.Views
         public LowRiskContactLayout()
         {
             InitializeComponent();
+
+#if ENABLE_TEST_CLOUD
+            LowRiskContactLayoutTitle.AutomationId = "LowRiskContactLayoutTitle";
+#endif
         }
     }
 }

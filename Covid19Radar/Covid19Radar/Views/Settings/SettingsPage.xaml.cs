@@ -19,6 +19,10 @@ namespace Covid19Radar.Views
         public SettingsPage()
         {
             InitializeComponent();
+
+#if ENABLE_TEST_CLOUD
+            SettingsPageTitle.AutomationId = "SettingsPageTitle";
+#endif
         }
     }
 }

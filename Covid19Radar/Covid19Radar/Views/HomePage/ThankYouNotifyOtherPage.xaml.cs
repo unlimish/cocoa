@@ -20,6 +20,10 @@ namespace Covid19Radar.Views
         public ThankYouNotifyOtherPage()
         {
             InitializeComponent();
+
+#if ENABLE_TEST_CLOUD
+            ThankYouNotifyOtherPageTitle.AutomationId = "ThankYouNotifyOtherPageTitle";
+#endif
         }
 
     }

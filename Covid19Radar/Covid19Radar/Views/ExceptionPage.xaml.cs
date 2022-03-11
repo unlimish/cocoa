@@ -19,6 +19,10 @@ namespace Covid19Radar.Views
         public ExceptionPage()
         {
             InitializeComponent();
+
+#if ENABLE_TEST_CLOUD
+            ExceptionPageTitle.AutomationId = "ExceptionPageTitle";
+#endif
         }
     }
 }

@@ -13,6 +13,10 @@ namespace Covid19Radar.Views
         public SendLogConfirmationPage()
         {
             InitializeComponent();
+
+#if ENABLE_TEST_CLOUD
+            SendLogConfirmationPageTitle.AutomationId = "SendLogConfirmationPageTitle";
+#endif
         }
     }
 }

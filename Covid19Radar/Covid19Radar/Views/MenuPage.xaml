@@ -19,7 +19,7 @@
 
     <MasterDetailPage.Master>
         <ContentPage
-            AutomationId="MasterDetailPageTitle"
+            x:Name="MasterDetailPageTitle"
             Title="{x:Static resources:AppResources.MenuPageTitle}"
             ios:Page.UseSafeArea="True">
 

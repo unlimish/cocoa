@@ -10,9 +10,14 @@ namespace Covid19Radar.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TutorialPage1 : ContentPage
     {
+
         public TutorialPage1()
         {
             InitializeComponent();
+
+#if ENABLE_TEST_CLOUD
+            TutorialPage1Title.AutomationId = "TutorialPage1Title";
+#endif
         }
     }
 }

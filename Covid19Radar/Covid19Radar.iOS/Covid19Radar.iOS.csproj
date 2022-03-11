@@ -20,7 +20,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
-    <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;DEBUG;ENABLE_TEST_CLOUD</DefineConstants>
+    <DefineConstants>DEBUG;__IOS__;__MOBILE__;__UNIFIED__;ENABLE_TEST_CLOUD;USE_MOCK;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -47,6 +47,7 @@
     <CodesignProvision>VS: net.kzmx.Covid19Radar Development</CodesignProvision>
     <LangVersion>latest</LangVersion>
     <MtouchUseLlvm>true</MtouchUseLlvm>
+    <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;ENABLE_TEST_CLOUD;USE_MOCK;</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -202,6 +203,12 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <MtouchArch>ARM64</MtouchArch>
     <MtouchUseLlvm>true</MtouchUseLlvm>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhoneSimulator'">
+    <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;ENABLE_TEST_CLOUD;USE_MOCK;</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AppStore|iPhoneSimulator'">
+    <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;ENABLE_TEST_CLOUD;USE_MOCK;</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />

@@ -37,9 +37,6 @@ namespace Covid19Radar.Views
 
             _homeActiveIconImage = NameScopeExtensions.FindByName<CachedImage>(this, "home_active_icon");
 
-#if ENABLE_TEST_CLOUD
-            HomePageTitle.AutomationId = "HomePageTitle";
-#endif
         }
 
         #endregion

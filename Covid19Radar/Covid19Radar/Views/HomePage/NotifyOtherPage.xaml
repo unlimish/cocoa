@@ -4,7 +4,7 @@
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
 <ContentPage
-    x:Name="NotifyOtherPageTitle"
+    AutomationId="NotifyOtherPageTitle"
     x:Class="Covid19Radar.Views.NotifyOtherPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -24,7 +24,7 @@
     -->
     <ContentView>
     <ScrollView
-        x:Name="NotifyOtherPageTitleScrollView"
+        AutomationId="NotifyOtherPageTitleScrollView"
         >
         <StackLayout
             Padding="15,15,15,20">
@@ -185,7 +185,7 @@
                         CornerRadius="5"
                         HasShadow="False">
                         <Entry
-                            x:Name="NotifyOtherPageTitleEntry"
+                            AutomationId="NotifyOtherPageTitleEntry"
                             AutomationProperties.IsInAccessibleTree="True"
                             TabIndex="12"
                             CharacterSpacing="5"
@@ -249,7 +249,7 @@
             </StackLayout>
 
             <Button
-                x:Name="SubmitConsentPageBtn"
+                AutomationId="SubmitConsentPageBtn"
                 AutomationProperties.IsInAccessibleTree="True"
                 TabIndex="17"
                 Command="{Binding Path=OnClickRegister}"

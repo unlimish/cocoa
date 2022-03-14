@@ -14,9 +14,6 @@ namespace Covid19Radar.Views
         {
             InitializeComponent();
 
-#if ENABLE_TEST_CLOUD
-            TutorialPage3Title.AutomationId = "TutorialPage3Title";
-#endif
         }
         protected async override void OnAppearing()
         {

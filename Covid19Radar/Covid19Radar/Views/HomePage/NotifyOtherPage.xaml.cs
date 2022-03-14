@@ -18,12 +18,6 @@ namespace Covid19Radar.Views
         {
             InitializeComponent();
 
-#if ENABLE_TEST_CLOUD
-            NotifyOtherPageTitle.AutomationId = "NotifyOtherPageTitle";
-            NotifyOtherPageTitleScrollView.AutomationId = "NotifyOtherPageTitleScrollView";
-            NotifyOtherPageTitleEntry.AutomationId = "NotifyOtherPageTitleEntry";
-            SubmitConsentPageBtn.AutomationId = "SubmitConsentPageBtn";
-#endif
         }
 
         public static INavigationParameters BuildNavigationParams(

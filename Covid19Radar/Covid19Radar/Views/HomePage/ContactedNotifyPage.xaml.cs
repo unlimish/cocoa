@@ -21,9 +21,6 @@ namespace Covid19Radar.Views
         {
             InitializeComponent();
 
-#if ENABLE_TEST_CLOUD
-            ContactedNotifyPageTitle.AutomationId = "ContactedNotifyPageTitle";
-#endif
         }
 
     }

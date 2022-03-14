@@ -14,11 +14,6 @@ namespace Covid19Radar.Views
         {
             InitializeComponent();
 
-#if ENABLE_TEST_CLOUD
-            HelpPage3Title.AutomationId = "HelpPage3Title";
-            HelpPage3ScrollView.AutomationId = "HelpPage3ScrollView";
-            HelpPage3Btn.AutomationId = "HelpPage3Btn";
-#endif
         }
     }
 }

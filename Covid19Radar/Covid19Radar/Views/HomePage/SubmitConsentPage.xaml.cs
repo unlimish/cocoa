@@ -18,11 +18,6 @@ namespace Covid19Radar.Views
         {
             InitializeComponent();
 
-#if ENABLE_TEST_CLOUD
-            SubmitConsentPageTitle.AutomationId = "SubmitConsentPageTitle";
-            SubmitConsentPageScrollView.AutomationId = "SubmitConsentPageScrollView";
-            SubmitConsentPageScrollBtn.AutomationId = "SubmitConsentPageScrollBtn";
-#endif
         }
 
         public static INavigationParameters BuildNavigationParams(

@@ -116,6 +116,7 @@ namespace CovidRadar.UITestV2
             app.Tap(openWebAccessibilityPolicyPage);
             return new WebAccessibilityPolicyPage();
         }
+
         public void ToolBarBack()
         {
             app.Tap(toolBarBack);

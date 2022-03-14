@@ -4,7 +4,7 @@
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
 <ContentPage
-    x:Name="HelpPage3Title"
+    AutomationId="HelpPage3Title"
     x:Class="Covid19Radar.Views.HelpPage3"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -23,7 +23,7 @@
     -->
     <ContentView>
     <ScrollView
-        x:Name="HelpPage3ScrollView"
+        AutomationId="HelpPage3ScrollView"
         >
         <Grid Style="{StaticResource HelpPageGridLayout}" Margin="20">
             <Grid.RowDefinitions>
@@ -152,7 +152,7 @@
             </StackLayout>
             <Grid Grid.Row="1">
                 <Button
-                    x:Name="HelpPage3Btn"
+                    AutomationId="HelpPage3Btn"
                     AutomationProperties.IsInAccessibleTree="True"
                     TabIndex="6"
                     Command="{Binding Path=OnClickNotifyOtherPage}"

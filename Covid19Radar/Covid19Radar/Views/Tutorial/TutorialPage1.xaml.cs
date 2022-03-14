@@ -15,9 +15,9 @@ namespace Covid19Radar.Views
         {
             InitializeComponent();
 
-#if ENABLE_TEST_CLOUD
+
             TutorialPage1Title.AutomationId = "TutorialPage1Title";
-#endif
+
         }
     }
 }

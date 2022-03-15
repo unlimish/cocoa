@@ -56,10 +56,10 @@ namespace CovidRadar.UITestV2
 
             //S7 初期化
             settingsPage.TaplDialogOKBtn();
-            settingsPage.AssertSettingsPage();
 
             AppManager.ReStartApp();
-            settingsPage.AssertSettingsPage();
+            TutorialPage1 tutorialPage1 = new TutorialPage1();
+            tutorialPage1.AssertTutorialPage1();
 
         }
 

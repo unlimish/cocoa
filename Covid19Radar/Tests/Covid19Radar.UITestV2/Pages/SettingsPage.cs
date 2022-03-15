@@ -18,7 +18,7 @@ namespace CovidRadar.UITestV2
         readonly Query openLicenseAgreementPage;
         readonly Query toolBarBack;
         readonly Query openMenuPage;
-        readonly Query syokika;
+        readonly Query tapSyokika;
 
 
         protected override PlatformQuery Trait => new PlatformQuery
@@ -36,7 +36,7 @@ namespace CovidRadar.UITestV2
                 openLicenseAgreementPage = x => x.Marked("SettingsPageTitle").Class("ButtonRenderer").Index(0); //ライセンスページ
                 toolBarBack = x => x.Id("toolbar").Class("AppCompatImageButton").Index(0); //戻るボタン
                 openMenuPage = x => x.Class("AppCompatImageButton").Index(0); //ハンバーガーメニュー
-                syokika = x => x.Marked("SettingsPageTitle").Class("ButtonRenderer").Index(1); //アプリ初期化
+                tapSyokika = x => x.Marked("SettingsPageTitle").Class("ButtonRenderer").Index(1); //アプリ初期化
             }
 
             if (OniOS)
@@ -44,7 +44,7 @@ namespace CovidRadar.UITestV2
                 openLicenseAgreementPage = x => x.Marked("SettingsPageTitle").Class("UIButton").Index(0); //ライセンスページ
                 toolBarBack = x => x.Class("UIButton").Index(2); //戻るボタン
                 openMenuPage = x => x.Class("UIButton").Index(2);//ハンバーガーメニュー
-                syokika = x => x.Marked("SettingsPageTitle").Class("UIButton").Index(1); //アプリ初期化
+                tapSyokika = x => x.Marked("SettingsPageTitle").Class("UIButton").Index(1); //アプリ初期化
             }
         }
 
@@ -65,11 +65,9 @@ namespace CovidRadar.UITestV2
         {
             app.Tap(toolBarBack);
         }
-        public void Syokika()
+        public void TapSyokika()
         {
-            app.Tap(syokika);
-            app.Tap(x => x.Id("button1"));
-            app.Tap(x => x.Id("button1"));
+            app.Tap(tapSyokika);
 
         }
 
@@ -81,6 +79,19 @@ namespace CovidRadar.UITestV2
         }
 
 
+        public void TaplDialogOKBtn()
+        {
+            app.WaitForElement(x => x.Text("OK"));
+            app.Tap("OK");
+        }
+
+        public void TapDialogCancelBtn(String cultureText = "ja-JP")
+        {
+            //string ComparisonText = (string)AppManager.Comparison(cultureText, "ButtonCancel");
+            //app.Tap(ComparisonText);//陽性情報の登録をしますダイアログ→(「登録」ボタン)
+            app.WaitForElement(x => x.Text("キャンセル"));
+            app.Tap("キャンセル");
+        }
 
 
     }

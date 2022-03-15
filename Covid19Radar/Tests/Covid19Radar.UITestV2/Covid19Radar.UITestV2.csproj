@@ -93,6 +93,7 @@
     <Compile Include="Tests\S19_Tests.cs" />
     <Compile Include="Tests\S20_Tests.cs" />
     <Compile Include="Tests\S21_Tests.cs" />
+    <Compile Include="Tests\S13_Tests.cs" />
     <Compile Include="Tests\S24_Tests.cs" />
     <Compile Include="Tests\S27_Tests.cs" />
     <Compile Include="Tests\S28_Tests.cs" />

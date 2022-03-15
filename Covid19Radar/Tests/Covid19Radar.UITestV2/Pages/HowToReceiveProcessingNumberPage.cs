@@ -12,7 +12,7 @@ namespace CovidRadar.UITestV2
     public class HowToReceiveProcessingNumberPage : BasePage
     {
         
-        readonly Query ToolBarBtn;
+        readonly Query toolBarBack;
 
 
         protected override PlatformQuery Trait => new PlatformQuery
@@ -29,13 +29,13 @@ namespace CovidRadar.UITestV2
 
             if (OnAndroid)
             {
-    
-                ToolBarBtn = x => x.Id("toolbar").Class("AppCompatImageButton").Index(0); //戻るボタン
+
+                toolBarBack = x => x.Id("toolbar").Class("AppCompatImageButton").Index(0); //戻るボタン
             }
 
             if (OniOS)
             {
-                ToolBarBtn = x => x.Id("BackButton").Class("UIButton").Index(0); //戻るボタン
+                toolBarBack = x => x.Class("UIButton").Index(0); //戻るボタン
             }
         }
 
@@ -47,7 +47,7 @@ namespace CovidRadar.UITestV2
         }
         public void ToolBarBack()
         {
-            app.Tap(ToolBarBtn);
+            app.Tap(toolBarBack);
         }
 
 

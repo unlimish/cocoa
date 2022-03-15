@@ -59,7 +59,7 @@ namespace CovidRadar.UITestV2
                 SymptomRadioBtn = x => x.Marked("NotifyOtherPageTitle").Class("UILabel").Index(2);//症状の有無(あり)ラジオボタン
                 ProcessingNumberForm = x => x.Id("NotifyOtherPageTitleEntry");//陽性番号入力フォーム
                 RegisterBtn = x => x.Marked("NotifyOtherPageTitle").Class("UIButton").Index(0);//登録するボタン
-                toolBarBack = x => x.Id("BackButton").Class("UIButton").Index(0); //戻るボタン
+                toolBarBack = x => x.Class("UIButton").Index(1); //戻るボタン
             }
         }
 

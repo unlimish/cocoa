@@ -36,7 +36,7 @@ namespace CovidRadar.UITestV2
 
             if (OniOS)
             {
-                toolBarBack = x => x.Id("BackButton").Class("UIButton").Index(0); //戻るボタン
+                toolBarBack = x => x.Class("UIButton").Index(0); //戻るボタン
                 openMenuPage = x => x.Class("UIButton").Marked("OK"); //ハンバーガーメニュー
             }
         }

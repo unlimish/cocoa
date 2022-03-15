@@ -87,10 +87,9 @@ namespace CovidRadar.UITestV2
 
         public void TapDialogCancelBtn(String cultureText = "ja-JP")
         {
-            //string ComparisonText = (string)AppManager.Comparison(cultureText, "ButtonCancel");
-            //app.Tap(ComparisonText);//陽性情報の登録をしますダイアログ→(「登録」ボタン)
-            app.WaitForElement(x => x.Text("キャンセル"));
-            app.Tap("キャンセル");
+            string ComparisonText = (string)AppManager.Comparison(cultureText, "ButtonCancel");
+            app.WaitForElement(x => x.Text(ComparisonText));
+            app.Tap(ComparisonText);//陽性情報の登録をしますダイアログ→(「登録」ボタン)
         }
 
 

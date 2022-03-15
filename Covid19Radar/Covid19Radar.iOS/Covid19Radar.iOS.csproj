@@ -82,7 +82,6 @@
     </MtouchInterpreter>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
-    <DefineConstants>DEBUG;__IOS__;__MOBILE__;__UNIFIED__;</DefineConstants>
     <DefineConstants>DEBUG;__IOS__;__MOBILE__;__UNIFIED__;ENABLE_TEST_CLOUD;USE_MOCK;</DefineConstants>
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>

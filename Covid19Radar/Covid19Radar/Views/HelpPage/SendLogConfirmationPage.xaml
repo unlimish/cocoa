@@ -17,7 +17,9 @@
     <ContentView>
         <ScrollView
             Margin="0"
-            Padding="0">
+            Padding="0"
+            AutomationId="SendLogConfirmationPageScrollView"
+            >
             <StackLayout
                 BackgroundColor="{StaticResource Background}"
                 Padding="20"
@@ -105,6 +107,7 @@
                         Text="{x:Static resources:AppResources.SendLogConfirmationPageTextLink1}" />
                 </Frame>
                 <Button
+                    AutomationId="SendLogConfirmationPageButton"
                     AutomationProperties.IsInAccessibleTree="True"
                     TabIndex="4"
                     Command="{Binding Path=OnClickSendLogCommand}"

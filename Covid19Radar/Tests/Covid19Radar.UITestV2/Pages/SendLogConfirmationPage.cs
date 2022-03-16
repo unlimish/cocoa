@@ -17,6 +17,7 @@ namespace CovidRadar.UITestV2
 
         readonly Query toolBarBack;
         readonly Query openMenuPage;
+        readonly Query submitConsentPageBtn;
 
 
         protected override PlatformQuery Trait => new PlatformQuery
@@ -32,12 +33,14 @@ namespace CovidRadar.UITestV2
             {
                 toolBarBack = x => x.Id("toolbar").Class("AppCompatImageButton").Index(0); //戻るボタン
                 openMenuPage = x => x.Class("AppCompatImageButton").Index(0); //ハンバーガーメニュー
+                submitConsentPageBtn = x => x.Marked("SendLogConfirmationPageTitle").Class("ButtonRenderer").Index(0);//登録するボタン
             }
 
             if (OniOS)
             {
                 toolBarBack = x => x.Class("UIButton").Index(1); //戻るボタン
                 openMenuPage = x => x.Class("UIButton").Marked("OK"); //ハンバーガーメニュー
+                submitConsentPageBtn = x => x.Marked("SendLogConfirmationPageTitle").Class("UIButton").Index(0);//登録するボタン
             }
         }
 
@@ -58,6 +61,12 @@ namespace CovidRadar.UITestV2
 
         }
 
+        public SendLogCompletePage OpenSubmitConsentPageBtn()
+        {
+            app.ScrollDownTo("SendLogConfirmationPageButton", "SendLogConfirmationPageScrollView");
+            app.Tap("SendLogConfirmationPageButton");
+            return new SendLogCompletePage();
+        }
 
 
 

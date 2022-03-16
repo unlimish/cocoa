@@ -39,10 +39,10 @@ namespace CovidRadar.UITestV2
             //app.Screenshot("AppImfo");
         }
 
-        
         [TearDown]
         public override void TearDown()
         {
+            app.Screenshot("Browser Check");
             if (OnAndroid)
             {
                 app.Invoke("FinishAndRemoveTask");

@@ -68,6 +68,7 @@
     <Compile Include="Pages\PrivacyPolicyPage.cs" />
     <Compile Include="Pages\PrivacyPolicyPage2.cs" />
     <Compile Include="Pages\PrivacyPolicyPageTitle.cs" />
+    <Compile Include="Pages\SendLogCompletePage.cs" />
     <Compile Include="Pages\SendLogConfirmationPage.cs" />
     <Compile Include="Pages\SettingsPage.cs" />
     <Compile Include="Pages\SubmitConsentPage.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Pages\TutorialPageFlow.cs" />
     <Compile Include="Pages\WebAccessibilityPolicyPage.cs" />
     <Compile Include="PlatformQuery.cs" />
+    <Compile Include="Tests\S16_Tests.cs" />
     <Compile Include="Tests\S15_Tests.cs" />
     <Compile Include="Tests\S01_Tests.cs" />
     <Compile Include="Tests\S04_Tests.cs" />

@@ -20,6 +20,7 @@ namespace CovidRadar.UITestV2
         readonly Query openMenuPage;
         readonly Query openFAQBtn;
         readonly Query appImfoLink;
+        readonly Query openMail;
 
         protected override PlatformQuery Trait => new PlatformQuery
         {
@@ -38,6 +39,7 @@ namespace CovidRadar.UITestV2
                 openMenuPage = x => x.Class("AppCompatImageButton").Index(0); //ハンバーガーメニュー
                 openFAQBtn = x => x.Marked("InqueryPageTitle").Class("ButtonRenderer").Index(0); //よくある質問ボタン
                 appImfoLink = x => x.Marked("InqueryPageTitle").Class("LabelRenderer").Index(3); //接触確認アプリに関する情報リンク
+                openMail = x => x.Marked("InqueryPageTitle").Class("ButtonRenderer").Index(1); //よくある質問ボタン
             }
 
             if (OniOS)
@@ -46,6 +48,7 @@ namespace CovidRadar.UITestV2
                 openMenuPage = x => x.Class("UIButton").Index(3);//ハンバーガーメニュー
                 openFAQBtn = x => x.Marked("InqueryPageTitle").Class("UIButton").Index(0); //よくある質問ボタン
                 appImfoLink = x => x.Marked("InqueryPageTitle").Class("UILabel").Index(3); //接触確認アプリに関する情報リンク
+                openMail = x => x.Marked("InqueryPageTitle").Class("UIButton").Index(1); //よくある質問ボタン
             }
         }
 
@@ -71,7 +74,10 @@ namespace CovidRadar.UITestV2
         {
             app.Tap(appImfoLink);
         }
-
+        public void OpenMail()
+        {
+            app.Tap(openMail);
+        }
 
         public MenuPage OpenMenuPage()
         {

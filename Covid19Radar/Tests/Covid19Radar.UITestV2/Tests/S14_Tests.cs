@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using NUnit.Framework;
 using Xamarin.UITest;
@@ -39,6 +40,9 @@ namespace CovidRadar.UITestV2
             // S3 「アプリに関するお問い合わせ」画面で、「よくある質問」ボタンを押下
             inqueryPage.TapOpenFAQBtn();
             //app.Screenshot("FAQ Page");
+
+            //Browserが立ち上がるまで待機
+            Thread.Sleep(3000);
         }
 
         

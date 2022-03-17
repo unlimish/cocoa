@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using NUnit.Framework;
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
@@ -37,6 +38,9 @@ namespace CovidRadar.UITestV2
             // S3 「アプリに関するお問い合わせ」画面で、「接触確認アプリに関する情報」のリンクを押下
             inqueryPage.TapAppImfoLink();
             //app.Screenshot("AppImfo");
+
+            //Browserが立ち上がるまで待機
+            Thread.Sleep(3000);
         }
 
         [TearDown]

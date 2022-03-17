@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using NUnit.Framework;
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
@@ -36,7 +37,10 @@ namespace CovidRadar.UITestV2
 
             //S2 過去１４日間の接触画面で、「アプリを周りの人に知らせる」ボタンを押下
             exposureCheckPage.OpenIntroducePopup();
-            
+
+            //ボトムシートが立ち上がるまで待機
+            Thread.Sleep(3000);
+
         }
 
 

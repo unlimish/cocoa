@@ -99,7 +99,7 @@ namespace CovidRadar.UITestV2
             sendLogConfirmationPage.ToolBarBack();
             inqueryPage.AssertInqueryPage();
 
-            //S19 「設定」画面左上のハンバーガーメニューを押下
+            //S19 「アプリに関するお問い合わせ」画面左上のハンバーガーメニューを押下
             inqueryPage.OpenMenuPage();
             menuPage.AssertMenuPage();
 
@@ -107,7 +107,7 @@ namespace CovidRadar.UITestV2
             menuPage.ToolBarBack();
             inqueryPage.AssertInqueryPage();
 
-            //S21 「設定」画面左上のハンバーガーメニューを押下
+            //S21 「アプリに関するお問い合わせ」画面左上のハンバーガーメニューを押下
             inqueryPage.OpenMenuPage();
             menuPage.AssertMenuPage();
 

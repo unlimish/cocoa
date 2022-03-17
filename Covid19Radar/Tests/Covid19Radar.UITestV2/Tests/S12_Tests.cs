@@ -89,7 +89,7 @@ namespace CovidRadar.UITestV2
             app.WaitForElement(x => x.Text(ComparisonText));
             var message = app.Query(x => x.Text(ComparisonText))[0];
 
-            //S8(文字比較) 「登録が完了しました」ポップアップが表示されること
+            //S8(文字比較) 英語、中国語いずれかの設定言語に合わせて、ページの言語が表示されていることを確認
             Assert.AreEqual(message.Text, ComparisonText);
 
         }

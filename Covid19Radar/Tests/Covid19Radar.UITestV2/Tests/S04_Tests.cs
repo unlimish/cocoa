@@ -380,7 +380,7 @@ namespace CovidRadar.UITestV2
 
 
             //S5 処理番号入力テキストボックスにパターンを参照して処理番号を入力
-            notifyOtherPage.EnterProcessingNumberForm("99999910");
+            notifyOtherPage.EnterProcessingNumberForm("99999988");
 
             //S6 「登録する」ボタンを押下
             notifyOtherPage.TapRegisterBtn();
@@ -396,7 +396,7 @@ namespace CovidRadar.UITestV2
             app.WaitForElement(x => x.Text(ComparisonText));
             var message = app.Query(x => x.Text(ComparisonText))[0];
 
-            //S8(文字比較) 「登録回数の上限に達しました」ポップアップが表示されること
+            //S8(文字比較) 「登録が完了しました」ポップアップが表示されること
             Assert.AreEqual(message.Text, ComparisonText);
 
         }
@@ -484,7 +484,7 @@ namespace CovidRadar.UITestV2
             app.WaitForElement(x => x.Text(ComparisonText));
             var message = app.Query(x => x.Text(ComparisonText))[0];
 
-            //S8(文字比較) 「登録回数の上限に達しました」ポップアップが表示されること
+            //S8(文字比較) 「処理番号が誤っているか、有効期限が切れています」ポップアップが表示されること
             Assert.AreEqual(message.Text, ComparisonText);
 
         }
@@ -597,7 +597,7 @@ namespace CovidRadar.UITestV2
             howToReceiveProcessingNumberPage.ToolBarBack();
 
             //S7 処理番号入力テキストボックスに処理番号を入力
-            notifyOtherPage.EnterProcessingNumberForm("99999988");//リクエスト(processNumber)桁エラーに対応する入力
+            notifyOtherPage.EnterProcessingNumberForm("99999910");//正しい処理番号
 
             //S8 「登録する」ボタンを押下
             notifyOtherPage.TapRegisterBtn();

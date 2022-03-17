@@ -380,7 +380,7 @@ namespace CovidRadar.UITestV2
 
 
             //S5 処理番号入力テキストボックスにパターンを参照して処理番号を入力
-            notifyOtherPage.EnterProcessingNumberForm("99999988");
+            notifyOtherPage.EnterProcessingNumberForm("99999910");
 
             //S6 「登録する」ボタンを押下
             notifyOtherPage.TapRegisterBtn();

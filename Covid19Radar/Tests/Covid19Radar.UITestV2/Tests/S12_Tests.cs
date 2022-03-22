@@ -17,7 +17,7 @@ namespace CovidRadar.UITestV2
         {
         }
 
-        /* Case1はライセンスページ遷移後の実装が出来なかったため手動実行
+
         [Test]
         public void Case01_Test()
         {
@@ -43,22 +43,49 @@ namespace CovidRadar.UITestV2
             LicenseAgreementPage licenseAgreementPage = settingsPage.OpenLicenseAgreementPage();
             licenseAgreementPage.AssertLicenseAgreementPage();
 
-            //app.Repl();
-            var h1 = app.Query(c => c.Css("a"));
+
+            //ライセンスページ部分の操作は自動テストではスキップ
+            //var h1 = app.Query(c => c.Css("a"));
             //app.ScrollDown("https");
-            app.ScrollDown(x => x.Marked("LicenseAgreementPageTitle").Class("WebView"));
+            //app.ScrollDown(x => x.Marked("LicenseAgreementPageTitle").Class("WebView"));
 
             //Xamarin.UITest.Configuration.AndroidAppConfigurator.WaitTimes.WaitForTimeout (1000);
             //app.Tap(h1.Value);
-            //Thread.Sleep(8000);
-            //app.Back();
-            ////app.Tap(c => c.Marked("PrivacyPolicyPageTitle").Class("ButtonRenderer").Index(0));
-            ////app.Tap(h1.Value);
 
+
+            //app.Tap(c => c.Marked("PrivacyPolicyPageTitle").Class("ButtonRenderer").Index(0));
+            //app.Tap(h1.Value);
             //Console.WriteLine(h1.Html);
 
+
+            //S13「ライセンス表記」画面から「設定」画面に戻る
+            app.Back();
+
+            //S14 「設定」画面で、「アプリを初期化」ボタンを押下
+            settingsPage.TapSyokika();
+            settingsPage.AssertSettingsPage();
+
+            //S15 「設定」画面で、「アプリの初期化を行います」ポップアップで「キャンセル」ボタンを押下
+            settingsPage.TapDialogCancelBtn();
+            settingsPage.AssertSettingsPage();
+
+            //S16 「設定」画面で、「アプリを初期化」ボタンを押下
+            settingsPage.TapSyokika();
+            settingsPage.AssertSettingsPage();
+
+            //S17 「設定」画面で、「アプリの初期化を行います」ポップアップで「OK」ボタンを押下
+            settingsPage.TaplDialogOKBtn();
+            settingsPage.AssertSettingsPage();
+
+            //S18 初期化
+            settingsPage.TaplDialogOKBtn();
+
+            //S19 アプリを起動し、初回ナビゲーションが始まることを確認
+            AppManager.ReStartApp();
+            TutorialPage1 tutorialPage1 = new TutorialPage1();
+            tutorialPage1.AssertTutorialPage1();
         }
-        */
+
 
         [Test]
         [Category("en-US")]

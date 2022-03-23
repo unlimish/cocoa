@@ -64,6 +64,7 @@ namespace CovidRadar.UITestV2
 
             //S4 処理番号の取得方法画面で「戻る」ボタンを押下
             howToReceiveProcessingNumberPage.ToolBarBack();
+            notifyOtherPage.AssertNotifyOtherPage();
 
             //端末言語取得
             var cultureText = AppManager.GetCurrentCultureBackDoor();
@@ -72,11 +73,13 @@ namespace CovidRadar.UITestV2
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
             notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
@@ -89,8 +92,7 @@ namespace CovidRadar.UITestV2
             //S7 「登録します」ポップアップの「登録」を押下
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
-
-
+            notifyOtherPage.AssertNotifyOtherPage();
 
 
             //言語から比較する単語をjsonから取得
@@ -129,6 +131,7 @@ namespace CovidRadar.UITestV2
 
             //S4 処理番号の取得方法画面で「戻る」ボタンを押下
             howToReceiveProcessingNumberPage.ToolBarBack();
+            notifyOtherPage.AssertNotifyOtherPage();
 
             //端末言語取得
             var cultureText = AppManager.GetCurrentCultureBackDoor();
@@ -137,11 +140,13 @@ namespace CovidRadar.UITestV2
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
             notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
@@ -154,6 +159,7 @@ namespace CovidRadar.UITestV2
             //S7 「登録します」ポップアップの「登録」を押下
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
             notifyOtherPage.TapCancelDialogOKBtn();
+            notifyOtherPage.AssertNotifyOtherPage();
 
 
             //言語から比較する単語をjsonから取得
@@ -193,6 +199,7 @@ namespace CovidRadar.UITestV2
 
             //S4 処理番号の取得方法画面で「戻る」ボタンを押下
             howToReceiveProcessingNumberPage.ToolBarBack();
+            notifyOtherPage.AssertNotifyOtherPage();
 
             //端末言語取得
             var cultureText = AppManager.GetCurrentCultureBackDoor();
@@ -201,17 +208,20 @@ namespace CovidRadar.UITestV2
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
             notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
             notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
@@ -223,6 +233,7 @@ namespace CovidRadar.UITestV2
 
             //S7 「登録します」ポップアップの「登録」を押下
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
 
 
             //言語から比較する単語をjsonから取得
@@ -265,6 +276,7 @@ namespace CovidRadar.UITestV2
 
             //S4 処理番号の取得方法画面で「戻る」ボタンを押下
             howToReceiveProcessingNumberPage.ToolBarBack();
+            notifyOtherPage.AssertNotifyOtherPage();
 
             //端末言語取得
             var cultureText = AppManager.GetCurrentCultureBackDoor();
@@ -274,17 +286,20 @@ namespace CovidRadar.UITestV2
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
             notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
             notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
@@ -296,6 +311,7 @@ namespace CovidRadar.UITestV2
 
             //S7 「登録します」ポップアップの「登録」を押下
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
 
 
             //言語から比較する単語をjsonから取得
@@ -338,23 +354,27 @@ namespace CovidRadar.UITestV2
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
             notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
             notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
             notifyOtherPage.TapCancelDialogOKBtn();
 
 
@@ -377,6 +397,7 @@ namespace CovidRadar.UITestV2
 
             //S4 処理番号の取得方法画面で「戻る」ボタンを押下
             howToReceiveProcessingNumberPage.ToolBarBack();
+            notifyOtherPage.AssertNotifyOtherPage();
 
 
             //S5 処理番号入力テキストボックスにパターンを参照して処理番号を入力
@@ -387,6 +408,7 @@ namespace CovidRadar.UITestV2
 
             //S7 「登録します」ポップアップの「登録」を押下
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
 
 
 
@@ -426,23 +448,27 @@ namespace CovidRadar.UITestV2
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
             notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
             notifyOtherPage.TapCancelDialogOKBtn();
             notifyOtherPage.TapCancelDialogOKBtn();
 
             notifyOtherPage.EnterProcessingNumberForm("99999988");
             notifyOtherPage.TapRegisterBtn();
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
             notifyOtherPage.TapCancelDialogOKBtn();
 
 
@@ -466,6 +492,7 @@ namespace CovidRadar.UITestV2
 
             //S4 処理番号の取得方法画面で「戻る」ボタンを押下
             howToReceiveProcessingNumberPage.ToolBarBack();
+            notifyOtherPage.AssertNotifyOtherPage();
 
 
             //S5 処理番号入力テキストボックスにパターンを参照して処理番号を入力
@@ -476,6 +503,7 @@ namespace CovidRadar.UITestV2
 
             //S7 「登録します」ポップアップの「登録」を押下
             notifyOtherPage.TapRegisterConfirmBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
 
 
             //言語から比較する単語をjsonから取得
@@ -595,21 +623,25 @@ namespace CovidRadar.UITestV2
 
             //S6 処理番号の取得方法画面で「戻る」ボタンを押下
             howToReceiveProcessingNumberPage.ToolBarBack();
+            notifyOtherPage.AssertNotifyOtherPage();
 
             //S7 処理番号入力テキストボックスに処理番号を入力
             notifyOtherPage.EnterProcessingNumberForm("99999910");//正しい処理番号
 
             //S8 「登録する」ボタンを押下
             notifyOtherPage.TapRegisterBtn();
+            notifyOtherPage.AssertNotifyOtherPage();
 
             //端末言語取得
             var cultureText = AppManager.GetCurrentCultureBackDoor();
 
             //S8 「登録します」ポップアップの「キャンセル」を押下
             notifyOtherPage.TapRegisterCancelBtn(cultureText);
+            notifyOtherPage.AssertNotifyOtherPage();
 
             //S8 「登録をキャンセルしました」ポップアップの「OK」を押下
             notifyOtherPage.TapCancelDialogOKBtn();
+            notifyOtherPage.AssertNotifyOtherPage();
 
 
         }

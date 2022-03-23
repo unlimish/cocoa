@@ -15,9 +15,7 @@ namespace Covid19Radar.Views
         {
             InitializeComponent();
 
-#if __IOS__
-            TutorialPage1Title.AutomationId = "TutorialPage1Title";
-#elif __ANDROID__
+#if ENABLE_TEST_CLOUD
             TutorialPage1Title.AutomationId = "TutorialPage1Title";
 #endif
 

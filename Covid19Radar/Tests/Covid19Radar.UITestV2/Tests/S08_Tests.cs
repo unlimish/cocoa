@@ -29,7 +29,7 @@ namespace CovidRadar.UITestV2
 
         }
         */
-        /*バックグラウンドからの起動が実装できないため、手動実行
+        //バックグラウンドからの起動が実装できないため、手動実行
         [Test]
         public void Case02_Test()
         {
@@ -38,6 +38,7 @@ namespace CovidRadar.UITestV2
             HomePage home = new HomePage();
             home.AssertHomePage();
             AppManager.ReStartApp();
+            app.Screenshot("SplashPage Check");
 
 
             //S1 ホーム画面に「動作中」と表示されていること
@@ -46,7 +47,26 @@ namespace CovidRadar.UITestV2
             //S2 「動作中」の下部の？ボタン押下
 
         }
-        */
+
+        [Test]
+        public void Case02_1_Test()
+        {
+
+            //タスクキルしていない状態をここで作る
+            HomePage home = new HomePage();
+            home.AssertHomePage();
+            app.Invoke("FinishAndRemoveTask");
+            AppManager.ReStartApp();
+            app.Screenshot("SplashPage Check");
+
+
+            //S1 ホーム画面に「動作中」と表示されていること
+            home.AssertHomePage();
+
+            //S2 「動作中」の下部の？ボタン押下
+
+        }
+
 
         [Test]
         public void Case1_Test()

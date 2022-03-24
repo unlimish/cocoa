@@ -5,7 +5,7 @@
 
 <ContentPage
     x:Class="Covid19Radar.Views.TutorialPage1"
-    x:Name="TutorialPage1Title"
+    AutomationId="TutorialPage1Title"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"

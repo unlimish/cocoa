@@ -17,12 +17,22 @@ namespace CovidRadar.UITestV2
         {
         }
 
+        [SetUp]
+        public override void BeforeEachTest()
+        {
+            AppManager.StartApp();
+            TutorialPageFlow TutorialPageFlow = new TutorialPageFlow();
+            TutorialPageFlow.Tutorial_Actual();
+        }
 
+
+        /*
         [SetUp]
         public override void BeforeEachTest()
         {
             //SetUpの無効化
         }
+        
 
         [OneTimeSetUp]
         public override void OneTimeSetUp()
@@ -37,7 +47,7 @@ namespace CovidRadar.UITestV2
         {
             AppManager.ReStartApp();
         }
-
+       */
 
         [Test]
         public void Case03_Test()

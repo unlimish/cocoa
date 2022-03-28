@@ -51,7 +51,10 @@
     <Compile Include="AppManager.cs" />
     <Compile Include="BasePage.cs" />
     <Compile Include="BaseTestFixture.cs" />
+    <Compile Include="Pages\ReAgreeTermsOfServicePage.cs" />
+    <Compile Include="Pages\ReAgreePrivacyPolicyPage.cs" />
     <Compile Include="Pages\ExposureCheckPageTitle.cs" />
+    <Compile Include="Pages\DebugPage.cs" />
     <Compile Include="Pages\NotContactPage.cs" />
     <Compile Include="Pages\ContactedNotifyPage.cs" />
     <Compile Include="Pages\HelpMenuPage.cs" />
@@ -82,6 +85,7 @@
     <Compile Include="Pages\TutorialPageFlow.cs" />
     <Compile Include="Pages\WebAccessibilityPolicyPage.cs" />
     <Compile Include="PlatformQuery.cs" />
+    <Compile Include="Tests\S07_Tests.cs" />
     <Compile Include="Tests\S15_Tests.cs" />
     <Compile Include="Tests\S01_Tests.cs" />
     <Compile Include="Tests\S04_Tests.cs" />
@@ -94,6 +98,7 @@
     <Compile Include="Tests\S14_Tests.cs" />
     <Compile Include="Tests\S16_Tests.cs" />
     <Compile Include="Tests\S19_Tests.cs" />
+    <Compile Include="Tests\S32_Tests.cs" />
     <Compile Include="Tests\S20_Tests.cs" />
     <Compile Include="Tests\S21_Tests.cs" />
     <Compile Include="Tests\S13_Tests.cs" />

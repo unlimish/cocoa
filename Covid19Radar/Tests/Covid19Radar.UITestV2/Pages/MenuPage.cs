@@ -22,6 +22,7 @@ namespace CovidRadar.UITestV2
         readonly Query openTermsofservicePageFromHelpPage;
         readonly Query openPrivacyPolicyPage2;
         readonly Query openWebAccessibilityPolicyPage;
+        readonly Query openDebugPage;
         readonly Query toolBarBack;
         readonly Query openHelpMenuPage;
 
@@ -45,6 +46,7 @@ namespace CovidRadar.UITestV2
                 openTermsofservicePageFromHelpPage = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(4); //利用規約 (使い方ページから)
                 openPrivacyPolicyPage2 = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(5); //プライバシーポリシー
                 openWebAccessibilityPolicyPage = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(6); //ウェブアクセシビリティ方針
+                openDebugPage = x => x.Marked("MasterDetailPageTitle").Class("ViewCellRenderer_ViewCellContainer").Index(7); //Debugメニュー
                 toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("ImageButtonRenderer").Index(0); //戻るボタン
             }
 
@@ -58,6 +60,7 @@ namespace CovidRadar.UITestV2
                 openTermsofservicePageFromHelpPage = x => x.Marked("MasterDetailPageTitle").Class("UITableViewCell").Index(4); //利用規約 (使い方ページから)
                 openPrivacyPolicyPage2 = x => x.Marked("MasterDetailPageTitle").Class("UITableViewCell").Index(5); //プライバシーポリシー
                 openWebAccessibilityPolicyPage = x => x.Marked("MasterDetailPageTitle").Class("UITableViewCell").Index(6); //ウェブアクセシビリティ方針
+                openDebugPage = x => x.Marked("MasterDetailPageTitle").Class("UITableViewCell").Index(7); //Debugメニュー
                 toolBarBack = x => x.Marked("MasterDetailPageTitle").Class("UIButton").Index(0); //戻るボタン
             }
         }
@@ -116,6 +119,13 @@ namespace CovidRadar.UITestV2
             app.Tap(openWebAccessibilityPolicyPage);
             return new WebAccessibilityPolicyPage();
         }
+
+        public DebugPage OpenDebugPage()
+        {
+            app.Tap(openDebugPage);
+            return new DebugPage();
+        }
+
 
         public void ToolBarBack()
         {

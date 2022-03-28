@@ -55,7 +55,7 @@ namespace CovidRadar.UITestV2
             //タスクキルしていない状態をここで作る
             HomePage home = new HomePage();
             home.AssertHomePage();
-            app.Invoke("FinishAndRemoveTask");
+            app.Invoke("FinishAndRemoveTask:","UITest");
             AppManager.ReStartApp();
             app.Screenshot("SplashPage Check");
 

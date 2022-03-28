@@ -324,6 +324,15 @@ namespace Covid19Radar.iOS
 
             return new NSString(culture.ToString());
         }
+
+        [Export("FinishAndRemoveTask:")]
+        public void FinishAndRemoveTask(UIApplication application)
+        {
+            nint taskID = UIApplication.SharedApplication.BeginBackgroundTask(() => { });
+            new Task(() => {
+                UIApplication.SharedApplication.EndBackgroundTask(taskID);
+            }).Start();
+        }
 #endif
     }
 }

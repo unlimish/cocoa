@@ -21,7 +21,7 @@ namespace CovidRadar.UITestV2
         [TearDown]
         public override void TearDown()
         {
-            app.Screenshot("BottomSheet Check");
+            app.Screenshot("(Manual) BottomSheet Check");
         }
 
 

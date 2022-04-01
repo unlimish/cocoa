@@ -11,16 +11,16 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
-    <DefineConstants>TRACE;ENABLE_TEST_CLOUD;USE_MOCK;</DefineConstants>
+    <DefineConstants>TRACE;ENABLE_TEST_CLOUD;USE_MOCK;___Release;</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE;DEBUG;ENABLE_TEST_CLOUD;USE_MOCK;</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;ENABLE_TEST_CLOUD;USE_MOCK;___Debug;</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Mock|AnyCPU'">
-    <DefineConstants>TRACE;DEBUG;ENABLE_TEST_CLOUD;USE_MOCK;</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;ENABLE_TEST_CLOUD;USE_MOCK;___Debug_Mock;</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='AppStore|AnyCPU'">
-    <DefineConstants>TRACE;DEBUG;ENABLE_TEST_CLOUD;USE_MOCK;</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;ENABLE_TEST_CLOUD;USE_MOCK;___AppStore;</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

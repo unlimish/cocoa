@@ -15,6 +15,15 @@ namespace Covid19Radar.Views
         {
             InitializeComponent();
 
+#if ___Release
+            LabelText.Text = "Releaseビルド";
+#elif ___Debug
+            LabelText.Text = "Debugビルド";
+#elif ___Debug_Mock
+            LabelText.Text = "Debug_Mockビルド";
+#elif ___AppStore
+            LabelText.Text = "AppStoreビルド";
+#endif
         }
     }
 }

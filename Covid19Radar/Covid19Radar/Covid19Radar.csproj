@@ -6,7 +6,7 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <Copyright />
     <PackageProjectUrl></PackageProjectUrl>
-    <Configurations>Release;Debug;Debug_Mock;AppStore</Configurations>
+    <Configurations>Release;Debug;Debug_Mock;AppStore;Ad-Hoc</Configurations>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DebugType>none</DebugType>
@@ -21,6 +21,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='AppStore|AnyCPU'">
     <DefineConstants>TRACE;DEBUG;ENABLE_TEST_CLOUD;USE_MOCK;___AppStore;</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Ad-Hoc|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;ENABLE_TEST_CLOUD;USE_MOCK;___AdHoc;</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

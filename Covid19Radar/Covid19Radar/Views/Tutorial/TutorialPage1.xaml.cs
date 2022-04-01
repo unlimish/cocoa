@@ -23,6 +23,8 @@ namespace Covid19Radar.Views
             LabelText.Text = "Debug_Mockビルド";
 #elif ___AppStore
             LabelText.Text = "AppStoreビルド";
+#elif ___AdHoc
+            LabelText.Text = "AdHocビルド";
 #endif
         }
     }

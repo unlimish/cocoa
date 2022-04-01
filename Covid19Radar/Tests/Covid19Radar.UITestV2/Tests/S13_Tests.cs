@@ -21,14 +21,10 @@ namespace CovidRadar.UITestV2
 
 
 
-        [Test]
-        public void Case01_Test()
+        public void S13(int count = 2)
         {
             HomePage homePage = new HomePage();
             homePage.AssertHomePage();
-
-
-
 
             //S1 ホーム画面で、ハンバーガーメニューを押下
             MenuPage menuPage = homePage.OpenMenuPage();
@@ -59,9 +55,36 @@ namespace CovidRadar.UITestV2
 
             AppManager.ReStartApp();
             TutorialPage1 tutorialPage1 = new TutorialPage1();
-            tutorialPage1.AssertTutorialPage1();
+
+
+            try
+            {
+                tutorialPage1.AssertTutorialPage1();
+            }
+            catch (Exception e)
+            {
+                if (count > 0)
+                {
+                    count--;
+                    S13(count);
+                }
+                else
+                {
+                    throw e;
+                }
+            }
 
         }
+
+
+
+        [Test]
+        public void Case01_Test()
+        {
+            S13();
+
+        }
+
 
 
 

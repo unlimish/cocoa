@@ -12,7 +12,7 @@ jobs:
   pool:
     vmImage: 'macOS-11'
   variables:
-  - group: ios-signing-distribution
+  - group: ios-signing-development
   - template: templates/variables/ios-build-environment-variables.yml
   steps:
   - template: templates/build/ios-build-mock-template.yml

@@ -180,7 +180,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <LangVersion>latest</LangVersion>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\Tests\Covid19Radar.UITestV2\UITestV2.ruleset</CodeAnalysisRuleSet>
     <CodesignKey>iPhone Developer</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
@@ -199,7 +199,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <LangVersion>latest</LangVersion>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\Tests\Covid19Radar.UITestV2\UITestV2.ruleset</CodeAnalysisRuleSet>
     <MtouchArch>ARM64</MtouchArch>
     <MtouchUseLlvm>true</MtouchUseLlvm>
   </PropertyGroup>

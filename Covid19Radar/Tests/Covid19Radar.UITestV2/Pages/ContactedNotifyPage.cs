@@ -6,50 +6,58 @@ using Xamarin.UITest;
 // Aliases Func<AppQuery, AppQuery> with Query
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
-
 namespace CovidRadar.UITestV2
 {
+    /// <summary>
+    /// ContantedNotifyクラス.
+    /// </summary>
     public class ContactedNotifyPage : BasePage
     {
-
         /***********
          * 過去14日間の接触
         ***********/
 
-        readonly Query openIntroducePopup;
+        private readonly Query openIntroducePopup;
 
-        protected override PlatformQuery Trait => new PlatformQuery
-        {
-            Android = x => x.Marked("ContactedNotifyPageTitle"),
-            iOS = x => x.Marked("ContactedNotifyPageTitle")
-        };
-
+        /// <summary>
+        /// コンストラクタ.
+        /// </summary>
         public ContactedNotifyPage()
         {
-            
-
             if (OnAndroid)
             {
-                
             }
 
             if (OniOS)
             {
-
             }
         }
 
-        // メニュー表示確認
+        /// <summary>
+        /// ページオブジェクトクエリ.
+        /// </summary>
+        protected override PlatformQuery Trait => new PlatformQuery
+        {
+            Android = x => x.Marked("ContactedNotifyPageTitle"),
+            iOS = x => x.Marked("ContactedNotifyPageTitle"),
+        };
+
+        /// <summary>
+        /// ContactedNotifyPageのアサーション.
+        /// </summary>
+        /// <param name="timeout">タイムアウト値.</param>
         public void AssertContactedNotify(TimeSpan? timeout = default(TimeSpan?))
         {
             app.Screenshot(this.GetType().Name.ToString());
-            base.AssertOnPage(timeout);
+            AssertOnPage(timeout);
         }
 
+        /// <summary>
+        /// アプリを共有するためのボトムシートを表示.
+        /// </summary>
         public void OpenIntroducePopup()
         {
             app.Tap(openIntroducePopup);
         }
-
     }
 }

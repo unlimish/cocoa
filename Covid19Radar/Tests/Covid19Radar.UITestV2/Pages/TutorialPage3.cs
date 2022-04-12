@@ -7,32 +7,26 @@ using Xamarin.UITest;
 // Aliases Func<AppQuery, AppQuery> with Query
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
-
 namespace CovidRadar.UITestV2
 {
+    /// <summary>
+    /// TutorialPage3クラス.
+    /// </summary>
     public class TutorialPage3 : BasePage
     {
         /***********
          * チュートリアルページ_3
         ***********/
 
-        readonly Query openPrivacyPolicyPage;
-        readonly Query NetworkErrorDialogOKBtn;
-        //static int count;
+        private readonly Query openPrivacyPolicyPage;
+        private readonly Query networkErrorDialogOKBtn;
 
-        protected override PlatformQuery Trait => new PlatformQuery
-        {
-            Android = x => x.Marked("TutorialPage3Title"),
-            iOS = x => x.Marked("TutorialPage3Title")
-        };
-
+        /// <summary>
+        /// コンストラクタ.
+        /// </summary>
         public TutorialPage3()
         {
-
-            
-            NetworkErrorDialogOKBtn = x => x.Id("button1");//通信エラー時に、「規約に同意して次へ」押下時に出現するダイアログのOKボタン
-
-            //count = 0;
+            networkErrorDialogOKBtn = x => x.Id("button1"); // 通信エラー時に、「規約に同意して次へ」押下時に出現するダイアログのOKボタン
 
             if (OnAndroid)
             {
@@ -45,14 +39,30 @@ namespace CovidRadar.UITestV2
             }
         }
 
-        // メニュー表示確認
+        /// <summary>
+        /// ページオブジェクトクエリ.
+        /// </summary>
+        protected override PlatformQuery Trait => new PlatformQuery
+        {
+            Android = x => x.Marked("TutorialPage3Title"),
+            iOS = x => x.Marked("TutorialPage3Title"),
+        };
+
+        /// <summary>
+        /// TutorialPage3のアサーション.
+        /// </summary>
+        /// <param name="timeout">タイムアウト値.</param>
         public void AssertTutorialPage3(TimeSpan? timeout = default(TimeSpan?))
         {
             app.Screenshot(this.GetType().Name.ToString());
-            base.AssertOnPage(timeout);
+            AssertOnPage(timeout);
         }
 
-
+        /// <summary>
+        /// PrivacyPolicyPageに遷移する.
+        /// </summary>
+        /// <param name="count">再帰回数.</param>
+        /// <returns>PrivacyPolicyPage.</returns>
         public PrivacyPolicyPage OpenPrivacyPolicyPage(int count = 5)
         {
             PrivacyPolicyPage pp = null;
@@ -74,22 +84,8 @@ namespace CovidRadar.UITestV2
                     throw e;
                 }
             }
+
             return pp;
         }
-
-
-
-        public void TapOpenPrivacyPolicyPage()
-        {
-            //wifi通信エラー時にボタン押下するケース用のメソッド
-            app.Tap(openPrivacyPolicyPage);
-            app.Tap(NetworkErrorDialogOKBtn);
-        }
-
-
-
-
-
-
     }
 }

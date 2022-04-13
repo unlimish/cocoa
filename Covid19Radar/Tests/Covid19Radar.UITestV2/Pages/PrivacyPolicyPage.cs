@@ -6,31 +6,24 @@ using Xamarin.UITest;
 // Aliases Func<AppQuery, AppQuery> with Query
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
-
 namespace CovidRadar.UITestV2
 {
+    /// <summary>
+    /// PrivacyPolicyPageクラス.
+    /// </summary>
     public class PrivacyPolicyPage : BasePage
     {
         /***********
          * プライバシーポリシー (チュートリアル内)
         ***********/
 
-        readonly Query openTutorialPage4;
+        private readonly Query openTutorialPage4;
 
-
-        protected override PlatformQuery Trait => new PlatformQuery
-        {
-            Android = x => x.Marked("PrivacyPolicyPageTitle"),
-            iOS = x => x.Marked("PrivacyPolicyPageTitle")
-        };
-
+        /// <summary>
+        /// コンストラクタ.
+        /// </summary>
         public PrivacyPolicyPage()
         {
-
-            
-
-
-
             if (OnAndroid)
             {
                 openTutorialPage4 = x => x.Marked("PrivacyPolicyPageTitle").Class("ButtonRenderer").Index(0);
@@ -42,24 +35,34 @@ namespace CovidRadar.UITestV2
             }
         }
 
+        /// <summary>
+        /// ページオブジェクトクエリ.
+        /// </summary>
+        protected override PlatformQuery Trait => new PlatformQuery
+        {
+            Android = x => x.Marked("PrivacyPolicyPageTitle"),
+            iOS = x => x.Marked("PrivacyPolicyPageTitle"),
+        };
+
+        /// <summary>
+        /// PrivacyPolicyPageのアサーション.
+        /// </summary>
+        /// <param name="timeout">タイムアウト値.</param>
         // メニュー表示確認
         public void AssertPrivacyPolicyPage(TimeSpan? timeout = default(TimeSpan?))
         {
             app.Screenshot(this.GetType().Name.ToString());
-            base.AssertOnPage(timeout);
+            AssertOnPage(timeout);
         }
 
+        /// <summary>
+        /// TutorialPage4に遷移する.
+        /// </summary>
+        /// <returns>TutorialPage4.</returns>
         public TutorialPage4 OpenTutorialPage4()
         {
             app.Tap(openTutorialPage4);
             return new TutorialPage4();
         }
-
-
-
-
-
-        
-
     }
 }

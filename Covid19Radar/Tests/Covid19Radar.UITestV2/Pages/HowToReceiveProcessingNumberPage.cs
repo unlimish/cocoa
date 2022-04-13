@@ -6,55 +6,56 @@ using Xamarin.UITest;
 // Aliases Func<AppQuery, AppQuery> with Query
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
-
 namespace CovidRadar.UITestV2
 {
+    /// <summary>
+    /// HowToReceiveProcessingNumberPageクラス.
+    /// </summary>
     public class HowToReceiveProcessingNumberPage : BasePage
     {
-        
-        readonly Query toolBarBack;
+        private readonly Query toolBarBack;
 
-
-        protected override PlatformQuery Trait => new PlatformQuery
-        {
-            Android = x => x.Marked("HowToReceiveProcessingNumberPageTitle"),
-            iOS = x => x.Marked("HowToReceiveProcessingNumberPageTitle")
-        };
-
+        /// <summary>
+        /// コンストラクタ.
+        /// </summary>
         public HowToReceiveProcessingNumberPage()
         {
-            
-
-
-
             if (OnAndroid)
             {
-
-                toolBarBack = x => x.Id("toolbar").Class("AppCompatImageButton").Index(0); //戻るボタン
+                toolBarBack = x => x.Id("toolbar").Class("AppCompatImageButton").Index(0); // 戻るボタン
             }
 
             if (OniOS)
             {
-                toolBarBack = x => x.Class("UIButton").Index(0); //戻るボタン
+                toolBarBack = x => x.Class("UIButton").Index(0); // 戻るボタン
             }
         }
 
-        // メニュー表示確認
+        /// <summary>
+        /// ページオブジェクトクエリ.
+        /// </summary>
+        protected override PlatformQuery Trait => new PlatformQuery
+        {
+            Android = x => x.Marked("HowToReceiveProcessingNumberPageTitle"),
+            iOS = x => x.Marked("HowToReceiveProcessingNumberPageTitle"),
+        };
+
+        /// <summary>
+        /// HowToReceiveProcessingNumberPageのアサーション.
+        /// </summary>
+        /// <param name="timeout">タイムアウト値.</param>
         public void AssertHowToReceiveProcessingNumberPage(TimeSpan? timeout = default(TimeSpan?))
         {
             app.Screenshot(this.GetType().Name.ToString());
-            base.AssertOnPage(timeout);
+            AssertOnPage(timeout);
         }
+
+        /// <summary>
+        /// 戻るボタンを押下する.
+        /// </summary>
         public void ToolBarBack()
         {
             app.Tap(toolBarBack);
         }
-
-
-
-
-
-
-
     }
 }

@@ -6,29 +6,25 @@ using Xamarin.UITest;
 // Aliases Func<AppQuery, AppQuery> with Query
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
-
 namespace CovidRadar.UITestV2
 {
+    /// <summary>
+    /// TutorialPage6クラス.
+    /// </summary>
     public class TutorialPage6 : BasePage
     {
         /***********
          * チュートリアルページ_6
         ***********/
 
-        readonly Query openHomePage;
-        readonly Query openHelpMenuPage;
+        private readonly Query openHomePage;
+        private readonly Query openHelpMenuPage;
 
-
-        protected override PlatformQuery Trait => new PlatformQuery
-        {
-            Android = x => x.Marked("TutorialPage6Title"),
-            iOS = x => x.Marked("TutorialPage6Title")
-        };
-
+        /// <summary>
+        /// コンストラクタ.
+        /// </summary>
         public TutorialPage6()
         {
-
-
             if (OnAndroid)
             {
                 openHomePage = x => x.Marked("TutorialPage6Title").Class("ButtonRenderer").Index(0);
@@ -42,29 +38,43 @@ namespace CovidRadar.UITestV2
             }
         }
 
-        // メニュー表示確認
+        /// <summary>
+        /// ページオブジェクトクエリ.
+        /// </summary>
+        protected override PlatformQuery Trait => new PlatformQuery
+        {
+            Android = x => x.Marked("TutorialPage6Title"),
+            iOS = x => x.Marked("TutorialPage6Title"),
+        };
+
+        /// <summary>
+        /// TutorialPage6のアサーション.
+        /// </summary>
+        /// <param name="timeout">タイムアウト値.</param>
         public void AssertTutorialPage6(TimeSpan? timeout = default(TimeSpan?))
         {
             app.Screenshot(this.GetType().Name.ToString());
-            base.AssertOnPage(timeout);
+            AssertOnPage(timeout);
         }
 
+        /// <summary>
+        /// HomePageに遷移する.
+        /// </summary>
+        /// <returns>HomePage.</returns>
         public HomePage OpenHomePage()
         {
             app.Tap(openHomePage);
             return new HomePage();
         }
+
+        /// <summary>
+        /// HelpMenuPageに遷移する.
+        /// </summary>
+        /// <returns>HelpMenuPage.</returns>
         public HelpMenuPage OpenHelpMenuPage()
         {
             app.Tap(openHelpMenuPage);
             return new HelpMenuPage();
         }
-
-
-
-
-
-
-
     }
 }

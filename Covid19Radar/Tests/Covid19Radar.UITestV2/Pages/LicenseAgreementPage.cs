@@ -6,66 +6,73 @@ using Xamarin.UITest;
 // Aliases Func<AppQuery, AppQuery> with Query
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
-
 namespace CovidRadar.UITestV2
 {
+    /// <summary>
+    /// LicenseAgreementPageクラス.
+    /// </summary>
     public class LicenseAgreementPage : BasePage
     {
         /***********
          * ライセンスページ
         ***********/
 
-        readonly Query toolBarBack;
-        readonly Query openMenuPage;
+        private readonly Query toolBarBack;
+        private readonly Query openMenuPage;
 
-
-        protected override PlatformQuery Trait => new PlatformQuery
-        {
-            Android = x => x.Marked("LicenseAgreementPageTitle"),
-            iOS = x => x.Marked("LicenseAgreementPageTitle")
-        };
-
+        /// <summary>
+        /// コンストラクタ.
+        /// </summary>
         public LicenseAgreementPage()
         {
-            
-
             if (OnAndroid)
             {
-                toolBarBack = x => x.Id("toolbar").Class("AppCompatImageButton").Index(0); //戻るボタン
-                openMenuPage = x => x.Class("AppCompatImageButton").Index(0); //ハンバーガーメニュー
+                toolBarBack = x => x.Id("toolbar").Class("AppCompatImageButton").Index(0); // 戻るボタン
+                openMenuPage = x => x.Class("AppCompatImageButton").Index(0); // ハンバーガーメニュー
             }
 
             if (OniOS)
             {
-                toolBarBack = x => x.Class("UIButton").Index(0); //戻るボタン
-                openMenuPage = x => x.Class("UIButton").Index(3);//ハンバーガーメニュー
+                toolBarBack = x => x.Class("UIButton").Index(0); // 戻るボタン
+                openMenuPage = x => x.Class("UIButton").Index(3); // ハンバーガーメニュー
             }
         }
 
-        // メニュー表示確認
+        /// <summary>
+        /// ページオブジェクトクエリ.
+        /// </summary>
+        protected override PlatformQuery Trait => new PlatformQuery
+        {
+            Android = x => x.Marked("LicenseAgreementPageTitle"),
+            iOS = x => x.Marked("LicenseAgreementPageTitle"),
+        };
+
+        /// <summary>
+        /// LicenseAgreementPageのアサーション.
+        /// </summary>
+        /// <param name="timeout">タイムアウト値.</param>
         public void AssertLicenseAgreementPage(TimeSpan? timeout = default(TimeSpan?))
         {
             app.Screenshot(this.GetType().Name.ToString());
-            base.AssertOnPage(timeout);
+            AssertOnPage(timeout);
         }
 
+        /// <summary>
+        /// 戻るボタンを押下する.
+        /// </summary>
         public void ToolBarBack()
         {
             app.Tap(toolBarBack);
         }
 
+        /// <summary>
+        /// MenuPage(ハンバーガーメニュー)を開く.
+        /// </summary>
+        /// <returns>MenuPage.</returns>
         public MenuPage OpenMenuPage()
         {
             app.Tap(openMenuPage);
             return new MenuPage();
-
         }
-
-
-
-
-
-
-
     }
 }

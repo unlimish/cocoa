@@ -7,25 +7,33 @@ using NUnit.Framework;
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
 
-
 namespace CovidRadar.UITestV2
 {
+    /// <summary>
+    /// S14_Testsクラス
+    /// S-14　お問い合わせ-よくある質問シナリオ.
+    /// </summary>
     [TestFixture(Platform.Android)]
     [TestFixture(Platform.iOS)]
     [Category("ja-JP")]
     public class S14_Tests : BaseTestFixture
-
     {
+        /// <summary>
+        /// コンストラクタ.
+        /// </summary>
+        /// <param name="platform">動作OS.</param>
         public S14_Tests(Platform platform)
             : base(platform)
         {
         }
 
-
+        /// <summary>
+        /// ホーム画面からよくある質問への遷移確認.
+        /// </summary>
         [Test]
+
         public void Case01_Test()
         {
-
             HomePage homePage = new HomePage();
             homePage.AssertHomePage();
 
@@ -40,21 +48,22 @@ namespace CovidRadar.UITestV2
             // S3 「アプリに関するお問い合わせ」画面で、「よくある質問」ボタンを押下
             inqueryPage.TapOpenFAQBtn();
 
-            //Browserが立ち上がるまで待機
+            // Browserが立ち上がるまで待機
             Thread.Sleep(5000);
         }
 
-        
+        /// <summary>
+        /// 後処理.
+        /// </summary>
         [TearDown]
         public override void TearDown()
         {
             app.Screenshot("(Manual) Browser Check");
             if (OnAndroid)
             {
+                // エミュレーターもしくは実機環境で動作させた場合
                 app.Invoke("FinishAndRemoveTask");
-            } 
+            }
         }
-        
-
     }
 }

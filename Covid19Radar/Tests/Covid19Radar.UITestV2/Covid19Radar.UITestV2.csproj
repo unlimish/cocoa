@@ -17,6 +17,8 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>UITestV2.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
@@ -44,6 +46,11 @@
       <Version>12.0.3</Version>
     </PackageReference>
     <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="StyleCop.Analyzers">
+      <Version>1.1.118</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="System.IdentityModel.Tokens.Jwt">
       <Version>6.15.0</Version>
     </PackageReference>
@@ -76,7 +83,6 @@
     <Compile Include="Pages\NotifyOtherPage.cs" />
     <Compile Include="Pages\PrivacyPolicyPage.cs" />
     <Compile Include="Pages\PrivacyPolicyPage2.cs" />
-    <Compile Include="Pages\PrivacyPolicyPageTitle.cs" />
     <Compile Include="Pages\SendLogCompletePage.cs" />
     <Compile Include="Pages\SendLogConfirmationPage.cs" />
     <Compile Include="Pages\SettingsPage.cs" />
@@ -86,7 +92,6 @@
     <Compile Include="Pages\TutorialPage2.cs" />
     <Compile Include="Pages\TutorialPage3.cs" />
     <Compile Include="Pages\TutorialPage4.cs" />
-    <Compile Include="Pages\TutorialPage5.cs" />
     <Compile Include="Pages\TutorialPage6.cs" />
     <Compile Include="Pages\TutorialPageFlow.cs" />
     <Compile Include="Pages\WebAccessibilityPolicyPage.cs" />
@@ -113,6 +118,8 @@
     <Compile Include="Tests\S32_Tests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="UITestv2.editorconfig" />
+    <None Include="UITestV2.ruleset" />
     <None Include="zh-CN.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

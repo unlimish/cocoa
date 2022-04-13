@@ -6,56 +6,60 @@ using Xamarin.UITest;
 // Aliases Func<AppQuery, AppQuery> with Query
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
-
 namespace CovidRadar.UITestV2
 {
+    /// <summary>
+    /// SendLogCompletePageクラス.
+    /// </summary>
     public class SendLogCompletePage : BasePage
     {
         /***********
          * 動作情報の送信
         ***********/
 
-        readonly Query openMail;
+        private readonly Query openMail;
 
-
-
-        protected override PlatformQuery Trait => new PlatformQuery
-        {
-            Android = x => x.Marked("SendLogCompletePageTitle"),
-            iOS = x => x.Marked("SendLogCompletePageTitle")
-        };
-
+        /// <summary>
+        /// コンストラクタ.
+        /// </summary>
         public SendLogCompletePage()
         {
-
             if (OnAndroid)
             {
-                openMail = x => x.Marked("SendLogCompletePageTitle").Class("ButtonRenderer").Index(0); //メールで動作情報IDを送信する
+                openMail = x => x.Marked("SendLogCompletePageTitle").Class("ButtonRenderer").Index(0); // メールで動作情報IDを送信する
             }
 
             if (OniOS)
             {
-                openMail = x => x.Class("UIButton").Index(0); //メールで動作情報IDを送信する
-
+                openMail = x => x.Class("UIButton").Index(0); // メールで動作情報IDを送信する
             }
         }
 
-        // メニュー表示確認
+        /// <summary>
+        /// ページオブジェクトクエリ.
+        /// </summary>
+        protected override PlatformQuery Trait => new PlatformQuery
+        {
+            Android = x => x.Marked("SendLogCompletePageTitle"),
+            iOS = x => x.Marked("SendLogCompletePageTitle"),
+        };
+
+        /// <summary>
+        /// SendLogCompletePageのアサーション.
+        /// </summary>
+        /// <param name="timeout">タイムアウト値.</param>
         public void AssertSendLogCompletePage(TimeSpan? timeout = default(TimeSpan?))
         {
             app.Screenshot(this.GetType().Name.ToString());
-            base.AssertOnPage(timeout);
+            AssertOnPage(timeout);
         }
 
+        /// <summary>
+        /// メールアプリを開く.
+        /// </summary>
         public void OpenMail()
         {
             app.Tap(openMail);
         }
-
-
-
-
-
-
     }
 }

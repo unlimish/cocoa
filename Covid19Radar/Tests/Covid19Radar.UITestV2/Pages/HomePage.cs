@@ -18,11 +18,9 @@ namespace CovidRadar.UITestV2
         ***********/
 
         private readonly Query openMenuPage;
-        private readonly Query openHelpMenuPage;
         private readonly Query toolBarBack;
         private readonly Query openNotContactPage;
         private readonly Query openSubmitConsentPage;
-        private readonly Query openNotContactPageENoff;
         private readonly Query openQuestionMark;
         private readonly Query openSubmitConsentPageENoff;
 
@@ -34,10 +32,8 @@ namespace CovidRadar.UITestV2
             if (OnAndroid)
             {
                 openMenuPage = x => x.Class("AppCompatImageButton").Index(0); // ハンバーガーメニュー
-                openHelpMenuPage = x => x.Marked("LabelMainTutorial"); // 使い方
                 toolBarBack = x => x.Id("toolbar").Class("AppCompatImageButton").Index(0); // 戻るボタン
                 openNotContactPage = x => x.Marked("HomePageTitle").Class("ButtonRenderer").Index(0); // 陽性者との接触結果を確認
-                openNotContactPageENoff = x => x.Marked("HomePageTitle").Class("ButtonRenderer").Index(1); // 陽性者との接触結果を確認 (接触通知OFF)
                 openSubmitConsentPage = x => x.Marked("HomePageTitle").Class("ButtonRenderer").Index(1); // 陽性情報の登録
                 openSubmitConsentPageENoff = x => x.Marked("HomePageTitle").Class("ButtonRenderer").Index(2); // 陽性情報の登録(接触通知OFF)
                 openQuestionMark = x => x.Marked("HomePageTitle").Class("CachedImageFastRenderer").Index(2); // ?マーク
@@ -46,10 +42,8 @@ namespace CovidRadar.UITestV2
             if (OniOS)
             {
                 openMenuPage = x => x.Class("UIButton").Index(3); // ハンバーガーメニュー
-                openHelpMenuPage = x => x.Marked("LabelMainTutorial"); // 使い方
                 toolBarBack = x => x.Class("UIButton").Index(3); // 戻るボタン
                 openNotContactPage = x => x.Marked("HomePageTitle").Class("UIButton").Index(1); // 陽性者との接触結果を確認
-                openNotContactPageENoff = x => x.Marked("HomePageTitle").Class("UIButton").Index(2); // 陽性者との接触結果を確認 (接触通知OFF)
                 openSubmitConsentPage = x => x.Marked("HomePageTitle").Class("UIButton").Index(2); // 陽性情報の登録
                 openSubmitConsentPageENoff = x => x.Marked("HomePageTitle").Class("UIButton").Index(3); // 陽性情報の登録(接触通知OFF)
                 openQuestionMark = x => x.Marked("HomePageTitle").Class("UIButton").Index(0); // ?マーク

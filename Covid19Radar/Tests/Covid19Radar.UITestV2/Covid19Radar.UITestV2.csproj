@@ -83,7 +83,6 @@
     <Compile Include="Pages\NotifyOtherPage.cs" />
     <Compile Include="Pages\PrivacyPolicyPage.cs" />
     <Compile Include="Pages\PrivacyPolicyPage2.cs" />
-    <Compile Include="Pages\PrivacyPolicyPageTitle.cs" />
     <Compile Include="Pages\SendLogCompletePage.cs" />
     <Compile Include="Pages\SendLogConfirmationPage.cs" />
     <Compile Include="Pages\SettingsPage.cs" />

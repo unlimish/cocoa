@@ -19,15 +19,12 @@ namespace CovidRadar.UITestV2
         ***********/
 
         private readonly Query openPrivacyPolicyPage;
-        private readonly Query networkErrorDialogOKBtn;
 
         /// <summary>
         /// コンストラクタ.
         /// </summary>
         public TutorialPage3()
         {
-            networkErrorDialogOKBtn = x => x.Id("button1"); // 通信エラー時に、「規約に同意して次へ」押下時に出現するダイアログのOKボタン
-
             if (OnAndroid)
             {
                 openPrivacyPolicyPage = x => x.Marked("TutorialPage3Title").Class("ButtonRenderer").Index(0);

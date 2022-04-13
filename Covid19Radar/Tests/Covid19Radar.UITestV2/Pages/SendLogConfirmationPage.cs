@@ -19,7 +19,6 @@ namespace CovidRadar.UITestV2
 
         private readonly Query toolBarBack;
         private readonly Query openMenuPage;
-        private readonly Query submitConsentPageBtn;
 
         /// <summary>
         /// コンストラクタ.
@@ -30,14 +29,12 @@ namespace CovidRadar.UITestV2
             {
                 toolBarBack = x => x.Id("toolbar").Class("AppCompatImageButton").Index(0); // 戻るボタン
                 openMenuPage = x => x.Class("AppCompatImageButton").Index(0); // ハンバーガーメニュー
-                submitConsentPageBtn = x => x.Marked("SendLogConfirmationPageTitle").Class("ButtonRenderer").Index(0); // 登録するボタン
             }
 
             if (OniOS)
             {
                 toolBarBack = x => x.Class("UIButton").Index(1); // 戻るボタン
                 openMenuPage = x => x.Class("UIButton").Marked("OK"); // ハンバーガーメニュー
-                submitConsentPageBtn = x => x.Marked("SendLogConfirmationPageTitle").Class("UIButton").Index(0); // 登録するボタン
             }
         }
 

@@ -25,7 +25,6 @@ namespace CovidRadar.UITestV2
         private readonly Query registerBtn;
         private readonly Query registerConfirmBtn;
         private readonly Query toolBarBack;
-        private readonly Query registerCancelBtn;
         private readonly Query cancelDialogOKBtn;
 
         /// <summary>
@@ -42,7 +41,6 @@ namespace CovidRadar.UITestV2
                 processingNumberForm = x => x.Marked("NotifyOtherPageTitle").Class("MaterialFormsTextInputLayout").Index(0); // 陽性番号入力フォーム
                 registerBtn = x => x.Marked("NotifyOtherPageTitle").Class("ButtonRenderer").Index(0); // 登録するボタン
                 registerConfirmBtn = x => x.Id("button1"); // 2種類のボタンに同じIDが振られていることに注意。陽性情報の登録をしますダイアログ→(「登録」ボタン)　　COVID-19接触のログ記録を有効にしてください→(「OK」ボタン)
-                registerCancelBtn = x => x.Id("button2"); // 陽性情報の登録をしますダイアログ→(「キャンセル」ボタン)
                 cancelDialogOKBtn = x => x.Id("button1"); // 「登録をキャンセルしました」ダイアログでのOKボタン
                 toolBarBack = x => x.Id("toolbar").Class("AppCompatImageButton").Index(0); // 戻るボタン
             }

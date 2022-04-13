@@ -33,6 +33,8 @@ namespace CovidRadar.UITestV2
 
             if (OniOS)
             {
+                openHomePage = x => x.Class("UIButton").Index(0);
+                openPrivacyPolicyLink = x => x.Class("UILabel").Index(2);
             }
         }
 

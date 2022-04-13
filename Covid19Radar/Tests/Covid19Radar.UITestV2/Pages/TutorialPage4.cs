@@ -19,15 +19,12 @@ namespace CovidRadar.UITestV2
 
         private readonly Query openTutorialPage6;
         private readonly Query openTutorialPage6BluetoothOff;
-        private readonly Query registDialogOKBtn;
 
         /// <summary>
         /// コンストラクタ.
         /// </summary>
         public TutorialPage4()
         {
-            registDialogOKBtn = x => x.Id("button2"); // 「登録をキャンセルしました」ダイアログでのOKボタン
-
             if (OnAndroid)
             {
                 openTutorialPage6 = x => x.Marked("TutorialPage4Title").Class("ButtonRenderer").Index(0);

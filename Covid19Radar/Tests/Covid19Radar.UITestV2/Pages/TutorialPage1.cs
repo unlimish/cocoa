@@ -70,12 +70,12 @@ namespace CovidRadar.UITestV2
             var buildcheck = "";
             if (OnAndroid)
             {
-                buildcheck = app.Invoke("build_check").ToString();
+                buildcheck = app.Invoke("BuildCheck").ToString();
             }
 
             if (OniOS)
             {
-                buildcheck = app.Invoke("build_check:", "UITest").ToString();
+                buildcheck = app.Invoke("BuildCheck:", "UITest").ToString();
             }
             return buildcheck;
 

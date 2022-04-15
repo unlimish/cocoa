@@ -336,12 +336,13 @@ namespace Covid19Radar.iOS
 #endif
 
 #if Debug_Mock
-        [Export("build_check:")]
-        public NSString build_check(NSString value)
+
+        [Export("BuildCheck:")]
+        public NSString BuildCheck(NSString value)
         {
             System.Globalization.CultureInfo culture = DependencyService.Get<ILocalizeService>().GetCurrentCultureInfo();
 
-            return new NSString(culture.ToString());
+            return new NSString(culture.ToString()+"aaa");
         }
 #endif
 

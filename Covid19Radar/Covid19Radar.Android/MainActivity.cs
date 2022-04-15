@@ -221,13 +221,14 @@ namespace Covid19Radar.Droid
 
 #if Debug_Mock
 
-        [Java.Interop.Export("build_check")]
-        public String build_check()
+        [Java.Interop.Export("BuildCheck")]
+        public String BuildCheck()
         {
-            var build_check_text = "Debug_Mockbuild";
-            return build_check_text.ToString();
+            Context appContext = Android.App.Application.Context;
+            CultureInfo culture = DependencyService.Get<ILocalizeService>().GetCurrentCultureInfo();
+            return culture.Name+"aaa";
         }
-          
+
 #endif
 
     }

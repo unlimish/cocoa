@@ -337,10 +337,11 @@ namespace Covid19Radar.iOS
 
 #if Debug_Mock
         [Export("build_check:")]
-        public String build_check()
+        public NSString build_check(NSString value)
         {
-            var build_check_text = "Debug_Mockbuild";
-            return build_check_text.ToString();
+            System.Globalization.CultureInfo culture = DependencyService.Get<ILocalizeService>().GetCurrentCultureInfo();
+
+            return new NSString(culture.ToString());
         }
 #endif
 

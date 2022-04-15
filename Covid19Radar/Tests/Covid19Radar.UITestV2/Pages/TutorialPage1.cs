@@ -63,5 +63,24 @@ namespace CovidRadar.UITestV2
             app.Tap(openTutorialPage2);
             return new TutorialPage2();
         }
+
+
+        public String Buildcheck()
+        {
+            var buildcheck = "";
+            if (OnAndroid)
+            {
+                buildcheck = app.Invoke("build_check").ToString();
+            }
+
+            if (OniOS)
+            {
+                buildcheck = app.Invoke("build_check:", "UITest").ToString();
+            }
+            return buildcheck;
+
+        }
+
+        
     }
 }

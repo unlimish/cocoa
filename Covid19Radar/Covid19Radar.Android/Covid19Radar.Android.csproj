@@ -80,7 +80,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_Mock|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\Debug_Mock\</OutputPath>
-    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;USE_MOCK;</DefineConstants>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;USE_MOCK;Debug_Mock;</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>

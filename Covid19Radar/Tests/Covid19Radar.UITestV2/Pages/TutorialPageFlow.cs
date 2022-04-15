@@ -20,6 +20,8 @@ namespace CovidRadar.UITestV2
         {
             TutorialPage1 tutorialPage1 = new TutorialPage1();
             tutorialPage1.AssertTutorialPage1();
+            Console.WriteLine(tutorialPage1.Buildcheck());
+
 
             TutorialPage2 tutorialPage2 = tutorialPage1.OpenTutorialPage2();
             tutorialPage2.AssertTutorialPage2();

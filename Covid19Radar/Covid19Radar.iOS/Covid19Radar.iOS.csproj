@@ -142,7 +142,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_Mock|iPhone'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\iPhone\Debug_Mock\</OutputPath>
-    <DefineConstants>DEBUG;__IOS__;__MOBILE__;__UNIFIED__;USE_MOCK;ENABLE_TEST_CLOUD;USE_MOCK;</DefineConstants>
+    <DefineConstants>DEBUG;__IOS__;__MOBILE__;__UNIFIED__;USE_MOCK;ENABLE_TEST_CLOUD;Debug_Mock;</DefineConstants>
     <DebugType>full</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <LangVersion>latest</LangVersion>

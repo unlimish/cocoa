@@ -218,5 +218,17 @@ namespace Covid19Radar.Droid
         }
 #endif
 
+
+#if Debug_Mock
+
+        [Java.Interop.Export("build_check")]
+        public String build_check()
+        {
+            var build_check_text = "Debug_Mockbuild";
+            return build_check_text.ToString();
+        }
+          
+#endif
+
     }
 }

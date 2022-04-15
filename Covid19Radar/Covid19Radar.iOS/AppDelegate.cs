@@ -334,6 +334,16 @@ namespace Covid19Radar.iOS
             }).Start();
         }
 #endif
+
+#if Debug_Mock
+        [Export("build_check:")]
+        public String build_check()
+        {
+            var build_check_text = "Debug_Mockbuild";
+            return build_check_text.ToString();
+        }
+#endif
+
     }
 }
 

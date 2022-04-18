@@ -51,7 +51,6 @@
                         Grid.Row="0"
                         Grid.Column="1"
                         AutomationProperties.IsInAccessibleTree="True"
-                        TabIndex="1"
                         Style="{StaticResource DefaultLabel}"
                         Text="{x:Static resources:AppResources.HelpPage3Description1}"
                         VerticalTextAlignment="Center" />
@@ -68,7 +67,6 @@
                         Grid.Row="1"
                         Grid.Column="0"
                         AutomationProperties.IsInAccessibleTree="True"
-                        TabIndex="2"
                         Style="{StaticResource DefaultLabel}"
                         Text="{x:Static resources:AppResources.HelpPage3Description2}"
                         VerticalTextAlignment="Center" />
@@ -98,7 +96,6 @@
                         Grid.Row="0"
                         Grid.Column="1"
                         AutomationProperties.IsInAccessibleTree="True"
-                        TabIndex="3"
                         Style="{StaticResource DefaultLabel}"
                         Text="{x:Static resources:AppResources.HelpPage3Description3}"
                         VerticalTextAlignment="Center" />
@@ -115,7 +112,6 @@
                         Grid.Row="1"
                         Grid.Column="0"
                         AutomationProperties.IsInAccessibleTree="True"
-                        TabIndex="4"
                         Style="{StaticResource DefaultLabel}"
                         Text="{x:Static resources:AppResources.HelpPage3Description4}"
                         VerticalTextAlignment="Center" />
@@ -144,7 +140,6 @@
                         Grid.Row="0"
                         Grid.Column="1"
                         AutomationProperties.IsInAccessibleTree="True"
-                        TabIndex="5"
                         Style="{StaticResource DefaultLabel}"
                         Text="{x:Static resources:AppResources.HelpPage3Description5}"
                         VerticalTextAlignment="Center" />
@@ -154,7 +149,6 @@
                 <Button
                     AutomationId="HelpPage3Btn"
                     AutomationProperties.IsInAccessibleTree="True"
-                    TabIndex="6"
                     Command="{Binding Path=OnClickNotifyOtherPage}"
                     Style="{StaticResource DefaultButton}"
                     Text="{x:Static resources:AppResources.HelpPage3Description6}" />

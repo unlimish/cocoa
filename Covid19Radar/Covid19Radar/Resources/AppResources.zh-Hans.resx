@@ -685,28 +685,30 @@
     <comment>検査等の相談先を探す</comment>
   </data>
   <data name="ContactedNotifyPageDescription1" xml:space="preserve">
-    <value>If you do not have any symptoms,
-or if you do not know anyone who has had contact with a person that has been tested positive for COVID-19,
-please go about your daily life as usual, paying attention to infection control measures.
-However, if you have any symptoms, please consider receiving a consultation..
-    </value>
-    <comment>TODO:症状がない場合、陽性者と接触した心当たりがない場合は、感染対策に留意しつつ普段通りの生活をお送りください。ただし、体調に変化があった場合は、受診を検討ください。</comment>
+    <value>如果您属于以下任何一种情况，请考虑根据应用的指导去医疗诊断机构。</value>
+    <comment>次のいずれかに当てはまる方は、アプリの案内に従い、診療・検査医療機関等への受診を検討ください。</comment>
+  </data>
+  <data name="ContactedNotifyPageDescription1_1" xml:space="preserve">
+    <value>・发烧或者有潜在疾病</value>
+    <comment>・発熱等の症状や基礎疾患がある</comment>
+  </data>
+  <data name="ContactedNotifyPageDescription1_2" xml:space="preserve">
+    <value>・有高感染风险的行为（*）</value>
+    <comment>・感染リスクの高い行動（※）をとった</comment>
+  </data>
+  <data name="ContactedNotifyPageDescription1_3" xml:space="preserve">
+    <value>・其他想接受诊断的情况</value>
+    <comment>・その他、受診を希望する</comment>
   </data>
   <data name="ContactedNotifyPageDescription2" xml:space="preserve">
-    <value>If any of the following applies to you, please follow the guidance and check the Consultation Centers List to receive a consultation.</value>
-    <comment>次のいずれかに当てはまる方は、アプリの案内に従って相談先をご確認ください。</comment>
+    <value>即使您不去接受诊断，请从接触之日起7天内，注意感染控制措施，例如避免与高危人群（如老年人和容易病情加重的人）接触，避免高感染风险的行为。
+但是，如果您感觉身体有任何变化，请考虑去接受诊断。</value>
+    <comment>受診しない場合でも、目安として接触日から７日間は高齢者など重症化リスクの高い方との接触・感染リスクの高い行動を控えていただくなど、感染対策に留意しながらお過ごしください。
+ただし、体調に変化があった場合は、受診を検討ください。</comment>
   </data>
-  <data name="ContactedNotifyPageDescription3" xml:space="preserve">
-    <value>・If you have any symptoms such as fever, pre-existing conditions.</value>
-    <comment>TODO:・発熱等の症状や基礎疾患がある</comment>
-  </data>
-  <data name="ContactedNotifyPageDescription4" xml:space="preserve">
-    <value>・If you have been in contact with a person that has been tested positive for COVID-19.</value>
-    <comment>TODO:・陽性者と接触した心当たりがある</comment>
-  </data>
-  <data name="ContactedNotifyPageDescription5" xml:space="preserve">
-    <value>・If you would like to receive a consultation.</value>
-    <comment>TODO:・その他、受診を希望する</comment>
+  <data name="ContactedNotifyPageHighRiskActionAnnotationText" xml:space="preserve">
+    <value>*长时间多人聚餐等行为</value>
+    <comment>※大人数や長時間に及ぶ飲食など</comment>
   </data>
   <data name="ReAgreeCheckButton" xml:space="preserve">
     <value>同意</value>

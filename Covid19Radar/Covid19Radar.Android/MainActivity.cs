@@ -89,7 +89,6 @@ namespace Covid19Radar.Droid
 
             AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightNo;
 
-            Xamarin.Forms.Forms.SetFlags("RadioButton_Experimental");
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
